@@ -8,37 +8,26 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
         :root {
-            /* Dark Pink & Purple Cherry Theme */
-            --bg-base: #0d0811;       /* Deepest plum/black */
-            --bg-panel: #160f1f;      /* Dark purple panel */
-            --bg-panel-hover: #21162c; /* Lighter purple for hover */
+            --bg-base: #0d0811;
+            --bg-panel: #160f1f;
+            --bg-panel-hover: #21162c;
             --bg-input: #100a16;
-            
             --border-color: #2a1b38;
             --border-highlight: #452a5c;
-
             --text-main: #f5f0f9;
             --text-muted: #9d8aad;
-            --text-dark: #685777;
-
-            --accent-primary: #ff4d94;  /* Cherry Pink */
+            --accent-primary: #ff4d94;
             --accent-hover: #e63980;
-            --accent-secondary: #a855f7; /* Vibrant Purple */
+            --accent-secondary: #a855f7;
             --accent-bg: rgba(255, 77, 148, 0.1);
-            
             --status-soon: #ff4d94;
             --status-later: #a855f7;
             --status-avail: #4ade80;
             --status-taken: #f87171;
-
             --font-family: 'Inter', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-base);
@@ -49,487 +38,223 @@
             overflow: hidden;
         }
 
-        /* --- Icons --- */
         svg {
-            width: 18px;
-            height: 18px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            width: 18px; height: 18px; fill: none; stroke: currentColor;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
             vertical-align: middle;
         }
 
-        /* --- Layout --- */
         .sidebar {
-            width: 250px;
-            background-color: var(--bg-base);
+            width: 250px; background-color: var(--bg-base);
             border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            padding: 20px 15px;
-            flex-shrink: 0;
-            height: 100vh;
-            overflow-y: auto;
+            display: flex; flex-direction: column;
+            padding: 20px 15px; flex-shrink: 0;
+            height: 100vh; overflow-y: auto;
         }
 
         .main-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow-y: auto;
+            flex: 1; display: flex; flex-direction: column;
+            height: 100vh; overflow-y: auto;
         }
 
         .topbar {
-            height: 70px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            background-color: var(--bg-base);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            height: 70px; border-bottom: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 40px; background-color: var(--bg-base);
+            position: sticky; top: 0; z-index: 10;
         }
 
         .content-area {
-            padding: 30px 40px;
-            display: grid;
+            padding: 30px 40px; display: grid;
             grid-template-columns: 1fr 340px;
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
+            gap: 30px; max-width: 1400px; margin: 0 auto; width: 100%;
         }
 
-        /* --- Sidebar Components --- */
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            padding-left: 10px;
-            letter-spacing: -0.5px;
+            display: flex; align-items: center; gap: 10px;
+            font-size: 22px; font-weight: 800; color: var(--text-main);
+            margin-bottom: 30px; padding-left: 10px; letter-spacing: -0.5px;
         }
-        .logo svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--accent-primary);
-        }
+        .logo svg { width: 28px; height: 28px; stroke: var(--accent-primary); }
 
-        .nav-menu {
-            list-style: none;
-            flex: 1;
-        }
-        .nav-menu li {
-            margin-bottom: 4px;
-        }
+        .nav-menu { list-style: none; flex: 1; }
+        .nav-menu li { margin-bottom: 4px; }
         .nav-menu a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
-            color: var(--text-muted);
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s;
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; color: var(--text-muted); text-decoration: none;
+            border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s;
         }
-        .nav-menu a:hover {
-            color: var(--text-main);
-            background-color: var(--bg-panel);
-        }
+        .nav-menu a:hover { color: var(--text-main); background-color: var(--bg-panel); }
         .nav-menu a.active {
-            background-color: var(--accent-bg);
-            color: var(--accent-primary);
+            background-color: var(--accent-bg); color: var(--accent-primary);
             border: 1px solid rgba(255, 77, 148, 0.2);
         }
 
         .sidebar-footer {
-            margin-top: auto;
-            padding: 20px 10px;
+            margin-top: auto; padding: 20px 10px;
             border-top: 1px solid var(--border-color);
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.6;
+            font-size: 12px; color: var(--text-muted); line-height: 1.6;
         }
-        .sidebar-footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
+        .sidebar-footer a { color: var(--accent-primary); text-decoration: none; }
+
+        .search-form { display: flex; width: 100%; max-width: 600px; position: relative; }
+        .search-form input {
+            width: 100%; background-color: var(--bg-input);
+            border: 1px solid var(--border-color); color: var(--text-main);
+            padding: 12px 20px 12px 45px; border-radius: 8px;
+            font-size: 14px; outline: none; transition: border-color 0.2s;
+        }
+        .search-form input:focus { border-color: var(--accent-primary); }
+        .search-form .search-icon {
+            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); width: 16px; height: 16px;
         }
 
-        /* --- Topbar Components --- */
-        .search-form {
-            display: flex;
-            width: 100%;
-            max-width: 600px;
-            position: relative;
-        }
-        .search-form input {
-            width: 100%;
-            background-color: var(--bg-input);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 12px 20px 12px 45px;
-            border-radius: 8px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .search-form input:focus {
-            border-color: var(--accent-primary);
-        }
-        .search-form .search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            width: 16px;
-            height: 16px;
-        }
-        
         .topbar-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: var(--text-muted);
+            display: flex; align-items: center; gap: 20px; color: var(--text-muted);
         }
         .sign-in-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.2s;
+            background: transparent; border: 1px solid var(--border-color);
+            color: var(--text-main); padding: 8px 16px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; font-weight: 500; transition: 0.2s;
         }
         .sign-in-btn:hover {
             border-color: var(--accent-primary);
-            background: var(--accent-bg);
-            color: var(--accent-primary);
+            background: var(--accent-bg); color: var(--accent-primary);
         }
 
-        /* --- Main Content Panels --- */
         .panel {
-            background-color: var(--bg-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 30px;
+            background-color: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: 12px; overflow: hidden; margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        /* Hero Section */
         .hero-panel {
             padding: 40px;
             background: linear-gradient(135deg, rgba(22, 15, 31, 0.9), rgba(13, 8, 17, 0.9)), 
                         url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            background-size: cover; background-position: center;
             border-color: var(--border-highlight);
         }
-        .hero-panel h1 {
-            font-size: 32px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .hero-panel h1 span {
-            color: var(--accent-primary);
-            text-shadow: 0 0 20px rgba(255, 77, 148, 0.3);
-        }
-        .hero-panel p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 25px;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        
+        .hero-panel h1 { font-size: 32px; margin-bottom: 12px; font-weight: 700; letter-spacing: -0.5px; }
+        .hero-panel h1 span { color: var(--accent-primary); text-shadow: 0 0 20px rgba(255, 77, 148, 0.3); }
+        .hero-panel p { color: var(--text-muted); font-size: 15px; margin-bottom: 25px; max-width: 600px; line-height: 1.6; }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
+            color: white; border: none; padding: 12px 24px; border-radius: 8px;
+            font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.2s;
             box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
         }
-        .btn-primary:hover {
-            opacity: 0.9;
-            box-shadow: 0 4px 20px rgba(255, 77, 148, 0.4);
-        }
+        .btn-primary:hover { opacity: 0.9; box-shadow: 0 4px 20px rgba(255, 77, 148, 0.4); }
 
-        /* Tables */
         .panel-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px 24px; border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .panel-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .panel-title svg {
-            stroke: var(--accent-primary);
-        }
-        .panel-subtitle {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 4px;
-            font-weight: 400;
-        }
+        .panel-title { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; }
+        .panel-title svg { stroke: var(--accent-primary); }
+        .panel-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; font-weight: 400; }
         .view-all {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 12px;
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: 0.2s;
+            color: var(--text-muted); text-decoration: none; font-size: 12px;
+            border: 1px solid var(--border-color); padding: 6px 12px;
+            border-radius: 6px; transition: 0.2s;
         }
-        .view-all:hover {
-            background-color: var(--bg-panel-hover);
-            color: var(--text-main);
-            border-color: var(--border-highlight);
-        }
+        .view-all:hover { background-color: var(--bg-panel-hover); color: var(--text-main); border-color: var(--border-highlight); }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+        table { width: 100%; border-collapse: collapse; }
         th {
-            text-align: left;
-            padding: 14px 24px;
-            font-size: 12px;
-            color: var(--text-muted);
-            font-weight: 500;
-            border-bottom: 1px solid var(--border-color);
+            text-align: left; padding: 14px 24px; font-size: 12px; color: var(--text-muted);
+            font-weight: 500; border-bottom: 1px solid var(--border-color);
             background-color: rgba(0,0,0,0.2);
         }
-        td {
-            padding: 12px 24px;
-            font-size: 13px;
-            border-bottom: 1px solid rgba(42, 27, 56, 0.6);
-            color: var(--text-main);
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        tr:hover {
-            background-color: var(--bg-panel-hover);
-        }
+        td { padding: 12px 24px; font-size: 13px; border-bottom: 1px solid rgba(42, 27, 56, 0.6); color: var(--text-main); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: var(--bg-panel-hover); }
 
-        .user-cell {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 500;
-        }
+        .user-cell { display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .mc-head {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            background-color: #222;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-            image-rendering: pixelated;
+            width: 32px; height: 32px; border-radius: 4px; background-color: #222;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); image-rendering: pixelated;
         }
 
-        /* Status Badges */
         .status {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+            display: inline-block; text-transform: uppercase; letter-spacing: 0.5px;
         }
         .status.soon { background: rgba(255, 77, 148, 0.15); color: var(--status-soon); border: 1px solid rgba(255, 77, 148, 0.3); }
         .status.later { background: rgba(168, 85, 247, 0.15); color: var(--status-later); border: 1px solid rgba(168, 85, 247, 0.3); }
         .status.available { color: var(--status-avail); }
         .status.taken { color: var(--status-taken); }
 
-        /* --- Right Sidebar --- */
-        .right-col {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
+        .right-col { display: flex; flex-direction: column; gap: 25px; }
 
-        .profile-card {
-            padding: 30px;
-            text-align: center;
-        }
+        .profile-card { padding: 30px; text-align: center; }
         .profile-head-large {
-            width: 96px;
-            height: 96px;
-            background-color: #2a1b38;
-            border-radius: 12px;
-            margin: 0 auto 15px;
-            border: 2px solid var(--border-highlight);
-            box-shadow: 0 0 25px rgba(255, 77, 148, 0.15);
-            image-rendering: pixelated;
+            width: 96px; height: 96px; background-color: #2a1b38; border-radius: 12px;
+            margin: 0 auto 15px; border: 2px solid var(--border-highlight);
+            box-shadow: 0 0 25px rgba(255, 77, 148, 0.15); image-rendering: pixelated;
             background-size: cover;
         }
-        .profile-name {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
+        .profile-name { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
         .profile-status-text {
-            font-size: 13px;
-            color: var(--accent-primary);
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
+            font-size: 13px; color: var(--accent-primary); margin-bottom: 25px;
+            display: flex; justify-content: center; align-items: center; gap: 8px; font-weight: 500;
         }
         .profile-status-text::before {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: var(--accent-primary);
-            border-radius: 50%;
+            content: ''; display: block; width: 8px; height: 8px;
+            background: var(--accent-primary); border-radius: 50%;
             box-shadow: 0 0 8px var(--accent-primary);
         }
-        
+
         .profile-details {
-            text-align: left;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            background: var(--bg-input);
-            border-radius: 8px;
-            padding: 0 15px;
-            border: 1px solid var(--border-color);
+            text-align: left; font-size: 13px; color: var(--text-muted);
+            margin-bottom: 25px; background: var(--bg-input); border-radius: 8px;
+            padding: 0 15px; border: 1px solid var(--border-color);
         }
-        .profile-details .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .profile-details .row:last-child {
-            border-bottom: none;
-        }
-        .profile-details .row span:last-child {
-            color: var(--text-main);
-            font-weight: 500;
-        }
+        .profile-details .row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+        .profile-details .row:last-child { border-bottom: none; }
+        .profile-details .row span:last-child { color: var(--text-main); font-weight: 500; }
 
-        .profile-actions {
-            display: flex;
-            gap: 10px;
-        }
+        .profile-actions { display: flex; gap: 10px; }
         .btn-notify {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--accent-primary);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            gap: 8px; background: var(--accent-primary); color: white; border: none;
+            padding: 14px; border-radius: 8px; font-weight: 600; font-size: 14px;
+            cursor: pointer; transition: 0.2s;
         }
-        .btn-notify:hover {
-            background: var(--accent-hover);
-        }
+        .btn-notify:hover { background: var(--accent-hover); }
         .btn-icon {
-            background-color: var(--bg-input);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
+            background-color: var(--bg-input); border: 1px solid var(--border-color);
+            color: var(--text-main); padding: 0 16px; border-radius: 8px;
+            cursor: pointer; transition: 0.2s;
         }
-        .btn-icon:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-        }
+        .btn-icon:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 
-        .info-card {
-            padding: 20px 24px;
-        }
+        .info-card { padding: 20px 24px; }
         .info-card h3 {
-            font-size: 14px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: var(--text-main);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 12px;
-            color: var(--text-muted);
+            font-size: 12px; margin-bottom: 15px; font-weight: 600;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;
         }
-        .similar-list {
-            list-style: none;
-        }
+        .similar-list { list-style: none; }
         .similar-list li a {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 14px;
-            border-bottom: 1px solid var(--border-color);
-            transition: 0.2s;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; color: var(--text-main); text-decoration: none;
+            font-size: 14px; border-bottom: 1px solid var(--border-color); transition: 0.2s;
         }
-        .similar-list li:last-child a {
-            border-bottom: none;
-        }
-        .similar-list li a:hover {
-            color: var(--accent-primary);
-        }
-        .similar-list svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--text-muted);
-        }
-        .similar-list a:hover svg {
-            stroke: var(--accent-primary);
-        }
+        .similar-list li:last-child a { border-bottom: none; }
+        .similar-list li a:hover { color: var(--accent-primary); }
+        .similar-list svg { width: 14px; height: 14px; stroke: var(--text-muted); }
+        .similar-list a:hover svg { stroke: var(--accent-primary); }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-base); }
         ::-webkit-scrollbar-thumb { background: var(--border-highlight); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-secondary); }
-
     </style>
 </head>
 <body>
 
-    <!-- Left Sidebar -->
     <aside class="sidebar">
         <div class="logo">
             <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
@@ -550,14 +275,11 @@
         </div>
     </aside>
 
-    <!-- Main Content Area -->
     <main class="main-wrapper">
-        
-        <!-- Top Navigation -->
         <header class="topbar">
             <div class="search-form">
                 <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" placeholder="Search for a Minecraft username...">
+                <input type="text" id="searchInput" placeholder="Search for a Minecraft username...">
             </div>
             <div class="topbar-actions">
                 <svg viewBox="0 0 24 24" style="cursor:pointer; width:20px; height:20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -566,21 +288,16 @@
         </header>
 
         <div class="content-area">
-            
-            <!-- Left Column (Main Content) -->
             <div class="left-col">
-                
-                <!-- Hero Panel -->
                 <div class="panel hero-panel">
                     <h1>Minecraft Username <span>Drops</span></h1>
                     <p>See when usernames will be available, how long they've been inactive, and catch your favorite names before someone else does.</p>
                     <div class="search-bar" style="display:flex; gap:10px; max-width:500px;">
-                        <input type="text" placeholder="Search for a username..." style="flex:1; background-color: rgba(19, 12, 26, 0.8); border: 1px solid var(--border-color); color: var(--text-main); padding: 12px 20px; border-radius: 8px; font-size: 14px; outline: none;">
-                        <button class="btn-primary">Search</button>
+                        <input type="text" id="heroSearchInput" placeholder="Search for a username..." style="flex:1; background-color: rgba(19, 12, 26, 0.8); border: 1px solid var(--border-color); color: var(--text-main); padding: 12px 20px; border-radius: 8px; font-size: 14px; outline: none;">
+                        <button class="btn-primary" onclick="searchName()">Search</button>
                     </div>
                 </div>
 
-                <!-- Upcoming Drops Table -->
                 <div class="panel">
                     <div class="panel-header">
                         <div>
@@ -601,54 +318,12 @@
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/MHF_Steve/32.png" class="mc-head" alt="head"> Zyphix</div></td>
-                                <td>Apr 28, 2025 · 2:14 PM</td>
-                                <td>3h 20m</td>
-                                <td><span class="status soon">Soon</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/MHF_Alex/32.png" class="mc-head" alt="head"> NotKira</div></td>
-                                <td>Apr 26, 2025 · 4:32 PM</td>
-                                <td>5h 38m</td>
-                                <td><span class="status soon">Soon</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Notch/32.png" class="mc-head" alt="head"> Luna</div></td>
-                                <td>Apr 26, 2025 · 7:10 PM</td>
-                                <td>8h 16m</td>
-                                <td><span class="status soon">Soon</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Herobrine/32.png" class="mc-head" alt="head"> xFrosty</div></td>
-                                <td>Apr 27, 2025 · 12:45 AM</td>
-                                <td>1d 14h</td>
-                                <td><span class="status later">Later</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Dinnerbone/32.png" class="mc-head" alt="head"> ItzVortex</div></td>
-                                <td>Apr 27, 2025 · 3:21 AM</td>
-                                <td>1d 16h</td>
-                                <td><span class="status later">Later</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/jeb_/32.png" class="mc-head" alt="head"> Shadowz</div></td>
-                                <td>Apr 27, 2025 · 9:08 AM</td>
-                                <td>1d 22h</td>
-                                <td><span class="status later">Later</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Steve/32.png" class="mc-head" alt="head"> Pxlr</div></td>
-                                <td>Apr 28, 2025 · 6:17 PM</td>
-                                <td>2d 19h</td>
-                                <td><span class="status later">Later</span></td>
-                            </tr>
+                        <tbody id="upcomingDropsBody">
+                            <!-- This will be populated by JavaScript -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Recently Dropped Table -->
                 <div class="panel">
                     <div class="panel-header">
                         <div>
@@ -668,54 +343,31 @@
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Alex/32.png" class="mc-head" alt="head"> Solaris</div></td>
-                                <td>Apr 26, 2025 · 10:02 AM</td>
-                                <td><span class="status available">Available</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Technoblade/32.png" class="mc-head" alt="head"> xBreezy</div></td>
-                                <td>Apr 26, 2025 · 8:47 AM</td>
-                                <td><span class="status available">Available</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/Dream/32.png" class="mc-head" alt="head"> Velix</div></td>
-                                <td>Apr 26, 2025 · 6:31 AM</td>
-                                <td><span class="status taken">Taken</span></td>
-                            </tr>
-                            <tr>
-                                <td><div class="user-cell"><img src="https://minotar.net/helm/GeorgeNotFound/32.png" class="mc-head" alt="head"> Frostbyte</div></td>
-                                <td>Apr 26, 2025 · 4:12 AM</td>
-                                <td><span class="status taken">Taken</span></td>
-                            </tr>
+                        <tbody id="recentlyDroppedBody">
+                            <!-- This will be populated by JavaScript -->
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
-            <!-- Right Column (Sidebar widgets) -->
             <div class="right-col">
-                
-                <!-- Profile Widget -->
-                <div class="panel profile-card">
-                    <img src="https://minotar.net/helm/MHF_Steve/96.png" class="profile-head-large" alt="Profile Head">
-                    <div class="profile-name">Zyphix</div>
-                    <div class="profile-status-text">Dropping Soon</div>
+                <div class="panel profile-card" id="profileCard">
+                    <img src="https://minotar.net/helm/MHF_Steve/96.png" class="profile-head-large" id="profileHead" alt="Profile Head">
+                    <div class="profile-name" id="profileName">Zyphix</div>
+                    <div class="profile-status-text" id="profileStatusText">Dropping Soon</div>
                     
                     <div class="profile-details">
                         <div class="row">
                             <span>Drop Time</span>
-                            <span>Apr 26, 2:14 PM</span>
+                            <span id="profileDropTime">Apr 26, 2:14 PM</span>
                         </div>
                         <div class="row">
                             <span>Time Remaining</span>
-                            <span>3h 20m</span>
+                            <span id="profileTimeRemaining">3h 20m</span>
                         </div>
                         <div class="row">
                             <span>Last Seen</span>
-                            <span>30 days ago</span>
+                            <span id="profileLastSeen">30 days ago</span>
                         </div>
                     </div>
 
@@ -730,42 +382,145 @@
                     </div>
                 </div>
 
-                <!-- About Widget -->
                 <div class="panel info-card">
                     <h3>About This Username</h3>
                     <div class="profile-details" style="margin-bottom:0; background:transparent; padding:0; border:none;">
                         <div class="row" style="padding: 8px 0;">
                             <span>Length</span>
-                            <span>6 characters</span>
+                            <span id="aboutLength">6 characters</span>
                         </div>
                         <div class="row" style="padding: 8px 0;">
                             <span>First Seen</span>
-                            <span>Jul 14, 2021</span>
+                            <span id="aboutFirstSeen">Jul 14, 2021</span>
                         </div>
                         <div class="row" style="padding: 8px 0;">
                             <span>Last Seen</span>
-                            <span>Mar 26, 2025</span>
+                            <span id="aboutLastSeen">Mar 26, 2025</span>
                         </div>
                         <div class="row" style="padding: 8px 0; border:none;">
                             <span>Previous Names</span>
-                            <span>None</span>
+                            <span id="aboutPrevNames">None</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Similar Usernames Widget -->
                 <div class="panel info-card">
                     <h3>Similar Usernames</h3>
-                    <ul class="similar-list">
-                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyphixx</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyph1x</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyphix_</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                    <ul class="similar-list" id="similarList">
+                        <!-- Will be populated by JS -->
                     </ul>
                 </div>
-
             </div>
         </div>
     </main>
 
-</body>
-</html>
+    <script>
+        // ==========================================
+        // DATA STRUCTURE & RENDERING
+        // ==========================================
+
+        // This is where you would put data fetched from your backend API.
+        // Since NameMC has no public open API, you must fetch it through a server-side proxy.
+        const mockData = {
+            upcomingDrops: [
+                { name: "Zyphix", dropTime: "Apr 28, 2025 · 2:14 PM", remaining: "3h 20m", status: "soon" },
+                { name: "NotKira", dropTime: "Apr 26, 2025 · 4:32 PM", remaining: "5h 38m", status: "soon" },
+                { name: "Luna", dropTime: "Apr 26, 2025 · 7:10 PM", remaining: "8h 16m", status: "soon" },
+                { name: "xFrosty", dropTime: "Apr 27, 2025 · 12:45 AM", remaining: "1d 14h", status: "later" },
+                { name: "ItzVortex", dropTime: "Apr 27, 2025 · 3:21 AM", remaining: "1d 16h", status: "later" },
+                { name: "Shadowz", dropTime: "Apr 27, 2025 · 9:08 AM", remaining: "1d 22h", status: "later" },
+                { name: "Pxlr", dropTime: "Apr 28, 2025 · 6:17 PM", remaining: "2d 19h", status: "later" },
+            ],
+            recentlyDropped: [
+                { name: "Solaris", droppedAt: "Apr 26, 2025 · 10:02 AM", status: "available" },
+                { name: "xBreezy", droppedAt: "Apr 26, 2025 · 8:47 AM", status: "available" },
+                { name: "Velix", droppedAt: "Apr 26, 2025 · 6:31 AM", status: "taken" },
+                { name: "Frostbyte", droppedAt: "Apr 26, 2025 · 4:12 AM", status: "taken" },
+            ],
+            profile: {
+                name: "Zyphix",
+                dropTime: "Apr 26, 2:14 PM",
+                remaining: "3h 20m",
+                lastSeen: "30 days ago",
+                length: "6 characters",
+                firstSeen: "Jul 14, 2021",
+                lastSeenFull: "Mar 26, 2025",
+                prevNames: "None"
+            }
+        };
+
+        // Function to get skin head URL
+        function getHeadUrl(name, size = 32) {
+            return `https://minotar.net/helm/${encodeURIComponent(name)}/${size}.png`;
+        }
+
+        // Function to render the Upcoming Drops table
+        function renderUpcomingDrops(data) {
+            const tbody = document.getElementById('upcomingDropsBody');
+            tbody.innerHTML = data.map(item => `
+                <tr onclick="loadProfile('${item.name}')">
+                    <td><div class="user-cell"><img src="${getHeadUrl(item.name)}" class="mc-head" alt="${item.name}" onerror="this.src='https://minotar.net/helm/MHF_Steve/32.png'"> ${item.name}</div></td>
+                    <td>${item.dropTime}</td>
+                    <td>${item.remaining}</td>
+                    <td><span class="status ${item.status}">${item.status === 'soon' ? 'Soon' : 'Later'}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // Function to render the Recently Dropped table
+        function renderRecentlyDropped(data) {
+            const tbody = document.getElementById('recentlyDroppedBody');
+            tbody.innerHTML = data.map(item => `
+                <tr onclick="loadProfile('${item.name}')">
+                    <td><div class="user-cell"><img src="${getHeadUrl(item.name)}" class="mc-head" alt="${item.name}" onerror="this.src='https://minotar.net/helm/MHF_Steve/32.png'"> ${item.name}</div></td>
+                    <td>${item.droppedAt}</td>
+                    <td><span class="status ${item.status}">${item.status === 'available' ? 'Available' : 'Taken'}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // Function to load profile info into the right sidebar
+        function loadProfile(name) {
+            // In a real app, you would fetch this data from your API
+            // For now, we'll just update the name and head
+            document.getElementById('profileName').textContent = name;
+            document.getElementById('profileHead').src = getHeadUrl(name, 96);
+            
+            // Update "About" section
+            document.getElementById('aboutLength').textContent = name.length + " characters";
+            
+            // Generate similar names (just for demo)
+            const similarList = document.getElementById('similarList');
+            similarList.innerHTML = `
+                <li><a href="#" onclick="loadProfile('${name}x')"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> ${name}x</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                <li><a href="#" onclick="loadProfile('${name}_')"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> ${name}_</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                <li><a href="#" onclick="loadProfile('${name}1')"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> ${name}1</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            `;
+        }
+
+        // Function to handle search (placeholder)
+        function searchName() {
+            const input = document.getElementById('heroSearchInput').value || document.getElementById('searchInput').value;
+            if (input) {
+                loadProfile(input);
+            }
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+
+        // Render initial data
+        renderUpcomingDrops(mockData.upcomingDrops);
+        renderRecentlyDropped(mockData.recentlyDropped);
+        loadProfile(mockData.profile.name);
+
+        // Add search event listeners
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchName();
+        });
+        document.getElementById('heroSearchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchName();
+        });
+
+        // ==========================================
