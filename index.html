@@ -1,140 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>chewyy.site — Flower Pink</title>
-<meta name="theme-color" content="#fff0f7"><meta name="description" content="A dreamy, customizable flower-pink profile page.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#49253b;--muted:#a17490;--pink:#df5b9c;--hot:#f18cbd;--rose:#ffd9e9;--line:#f0c7db;--paper:#fff9fc;--glass:rgba(255,255,255,.77);--shadow:0 24px 80px rgba(171,76,125,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 12% 5%,#ffe0ee 0,transparent 33%),radial-gradient(ellipse at 90% 72%,#f8dff0 0,transparent 35%),linear-gradient(140deg,#fff8fc,#ffedf5 52%,#fff7fb);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#e59abd 1px,transparent 1.2px);background-size:27px 27px;mask-image:linear-gradient(to bottom,black,transparent 85%)}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit}.shell{width:min(1120px,100% - 38px);margin:auto}.topbar{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 25px Manrope,sans-serif;letter-spacing:-1.3px;display:flex;align-items:center;gap:9px}.brand-flower{width:35px;height:35px;display:grid;place-items:center;color:white;background:linear-gradient(145deg,#f39ac4,#d85898);border-radius:13px;box-shadow:0 8px 20px #e8a2c6aa;font-size:19px}.brand b{color:var(--pink)}.top-note{font-size:12px;color:#a77a94;background:#ffffff8a;border:1px solid #f0cde0;border-radius:99px;padding:9px 13px}.top-note span{color:#df5b9c;margin-right:6px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start;padding:30px 0 90px}.profile-card,.side-card{background:var(--glass);border:1px solid #fff;box-shadow:var(--shadow);backdrop-filter:blur(18px);border-radius:28px;overflow:hidden}.cover{height:220px;position:relative;overflow:hidden;background:linear-gradient(125deg,#f9c1dc,#e77db3 48%,#c58bc7);background-size:cover;background-position:center}.cover:before,.cover:after{content:"✿";position:absolute;color:#ffffff52;font-size:125px;line-height:1;transform:rotate(-16deg)}.cover:before{left:8%;top:-23px}.cover:after{right:12%;bottom:-43px;font-size:180px;transform:rotate(20deg)}.cover-glow{position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,#fff8 0,transparent 30%),linear-gradient(0deg,#8e3d7430,transparent 70%)}.profile-content{padding:0 34px 32px}.avatar-wrap{display:flex;justify-content:space-between;align-items:end;margin-top:-58px;position:relative;z-index:1}.avatar{width:116px;height:116px;border:6px solid #fff9fc;border-radius:34px;background:linear-gradient(145deg,#f4a0c6,#cc81b9);box-shadow:0 12px 32px #a04b7933;overflow:hidden;display:grid;place-items:center;font:800 38px Manrope;color:white}.avatar img{width:100%;height:100%;object-fit:cover}.profile-stamp{font-size:11px;color:#a56d8c;border:1px solid #f0c9dd;background:#fff8fc;border-radius:99px;padding:8px 11px;margin-bottom:8px}.name-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}.display-name{font:800 clamp(27px,4vw,38px) Manrope;letter-spacing:-1.5px;overflow-wrap:anywhere}.verified{color:#d95d9b;font-size:19px}.handle{color:#a47791;font-size:14px;margin-top:3px}.bio{font-size:14px;line-height:1.85;color:#7c526a;margin-top:16px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:680px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chip{border:1px solid #f3c8dc;background:#fff0f7;color:#a84f7d;border-radius:99px;padding:7px 11px;font-size:11px;font-weight:700}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;margin-bottom:14px}.section-head h2{font:800 16px Manrope;letter-spacing:-.3px}.section-head span{font-size:11px;color:#b1839d}.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.link-card{--platform:#e86ba8;display:flex;align-items:center;gap:12px;min-width:0;padding:13px;border-radius:18px;text-decoration:none;background:linear-gradient(135deg,#fff,#fff5fa);border:1px solid #f2d5e4;box-shadow:0 5px 15px #ad5c8510;transition:transform .2s,border .2s,box-shadow .2s}.link-card:hover{transform:translateY(-3px);border-color:#e7a2c4;box-shadow:0 12px 25px #ad5c851a}.link-avatar{width:48px;height:48px;border-radius:15px;background:color-mix(in srgb,var(--platform) 15%,white);border:1px solid color-mix(in srgb,var(--platform) 23%,white);display:grid;place-items:center;flex:0 0 auto;font-size:23px;color:var(--platform);overflow:hidden}.link-avatar img{width:100%;height:100%;object-fit:cover}.link-copy{min-width:0;flex:1}.link-title{font-size:13px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.link-subtitle{font-size:11px;color:#ad819a;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.link-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}.stat{font-size:10px;color:#a56e8b;background:#fff0f7;border-radius:6px;padding:4px 6px}.link-arrow{color:#d56b9f;font-size:16px;margin-left:auto}.empty-links{grid-column:1/-1;text-align:center;padding:28px 16px;border:1px dashed #e8b7d0;border-radius:18px;color:#b1839d;font-size:13px;background:#fff8fc8a}.profile-footer{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:17px 28px;border-top:1px solid #f3dbe7;color:#b18aa0;font-size:10px}.profile-footer strong{color:#d65c99}.side-stack{display:grid;gap:15px}.side-card{padding:22px}.side-title{font:800 14px Manrope;margin-bottom:13px}.side-copy{font-size:12px;line-height:1.8;color:#9d7390}.mini-flower{font-size:30px;margin-bottom:10px}.preview-pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#a65b83;background:#fff0f7;border:1px solid #f2c9dc;border-radius:99px;padding:8px 10px;margin-top:13px}.preview-pill i{width:6px;height:6px;border-radius:50%;background:#e86ba8}.settings-fab{position:fixed;right:25px;bottom:24px;z-index:10;width:60px;height:60px;border:1px solid #ffffffd9;border-radius:22px;background:linear-gradient(145deg,#f18fbd,#d94e96);color:white;box-shadow:0 12px 32px #d95b9d59;display:grid;place-items:center;font-size:25px;transition:.2s}.settings-fab:hover{transform:translateY(-4px) rotate(7deg);box-shadow:0 18px 40px #d95b9d6b}.settings-fab small{position:absolute;right:65px;white-space:nowrap;background:#fff9fc;border:1px solid #f0c7db;color:#a4567f;border-radius:10px;padding:9px 11px;font-size:11px;font-weight:700;box-shadow:0 5px 20px #b75c8515}.overlay{position:fixed;inset:0;z-index:30;display:none;background:#6d345b55;backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:0}.overlay.open{display:flex}.dialog{width:100%;height:100%;overflow:auto;background:linear-gradient(140deg,#fffafd,#fff2f8);animation:open .25s ease both}@keyframes open{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.dialog-top{height:78px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f1d7e5;background:#fff9fcdd;position:sticky;top:0;z-index:3;backdrop-filter:blur(14px)}.dialog-brand{display:flex;align-items:center;gap:12px}.dialog-brand .brand-flower{width:39px;height:39px}.dialog-brand h1{font:800 17px Manrope;letter-spacing:-.5px}.dialog-brand p{font-size:11px;color:#ad819a;margin-top:2px}.close-btn{border:1px solid #f0c7db;background:#fff1f7;color:#a95a82;border-radius:12px;padding:10px 13px;font-size:12px;font-weight:700}.settings-shell{width:min(1240px,100% - 48px);margin:28px auto 60px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:24px;align-items:start}.settings-sidebar{position:sticky;top:100px;border:1px solid #f2d5e4;background:#fff9fcce;border-radius:22px;padding:12px;box-shadow:0 10px 30px #a84e7a0c}.sidebar-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#c18aa7;padding:11px 12px 8px;font-weight:800}.tab-btn{width:100%;display:flex;align-items:center;gap:11px;border:0;background:transparent;color:#956780;text-align:left;padding:12px;border-radius:13px;font-size:13px;font-weight:700;margin:2px 0}.tab-btn .tab-icon{width:30px;height:30px;display:grid;place-items:center;background:#fff0f7;border:1px solid #f5d6e5;border-radius:10px;font-size:15px}.tab-btn.active{background:linear-gradient(110deg,#ffe4f0,#fff1f8);color:#a83d76;box-shadow:inset 0 0 0 1px #f3c8dc}.tab-btn.active .tab-icon{background:#e96ba8;color:white;border-color:#e96ba8}.sidebar-bottom{border-top:1px solid #f3dce8;margin-top:13px;padding:14px 10px 4px;font-size:11px;line-height:1.7;color:#b18aa0}.workspace{min-width:0}.workspace-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:4px 0 22px}.workspace-head h2{font:800 clamp(24px,3vw,32px) Manrope;letter-spacing:-1px}.workspace-head p{font-size:13px;color:#a77b94;line-height:1.7;margin-top:7px;max-width:650px}.panel{display:none}.panel.active{display:block}.settings-card{background:#fffdfedb;border:1px solid #f1d5e4;border-radius:22px;padding:23px;box-shadow:0 10px 30px #ad5c8510;margin-bottom:16px}.card-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.card-heading h3{font:800 15px Manrope}.card-heading p{font-size:12px;color:#a77b94;line-height:1.65;margin-top:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field.full{grid-column:1/-1}.field label{display:block;font-size:11px;font-weight:800;color:#8f5b78;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;border:1px solid #f0cadd;background:#fff9fc;color:#572e46;border-radius:12px;padding:12px 13px;outline:none;font-size:13px;transition:.2s}.field input:focus,.field textarea:focus,.field select:focus{border-color:#e57eaf;box-shadow:0 0 0 3px #e86ba81c}.field textarea{min-height:95px;resize:vertical;line-height:1.7}.field .help{font-size:10px;color:#b18aa0;line-height:1.6;margin-top:6px}.btn{border:1px solid #f0cadd;border-radius:12px;padding:11px 15px;font-size:12px;font-weight:800;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn.primary{color:white;border-color:transparent;background:linear-gradient(135deg,#f18fbd,#d94e96);box-shadow:0 7px 17px #d95b9d24}.btn.soft{color:#a3567e;background:#fff0f7}.btn.danger{color:#c14c7f;background:#fff0f6;border-color:#f3bfd6}.btn.small{padding:8px 10px;font-size:11px}.form-actions{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap;margin-top:20px}.links-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.links-toolbar p{font-size:12px;color:#a77b94;line-height:1.6}.link-manager-list{display:grid;gap:10px}.manager-item{display:flex;align-items:center;gap:13px;border:1px solid #f0d4e3;border-radius:17px;background:#fff9fc;padding:13px;min-width:0}.manager-item .link-avatar{width:50px;height:50px}.manager-copy{min-width:0;flex:1}.manager-copy strong{display:block;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.manager-copy small{display:block;color:#b1849d;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px}.manager-actions{display:flex;gap:7px;flex-shrink:0}.manager-empty{text-align:center;padding:36px 18px;border:1px dashed #e8b8d0;border-radius:17px;color:#b1839d;background:#fff9fc}.manager-empty strong{display:block;color:#9c587d;font:800 15px Manrope;margin:9px 0 5px}.manager-empty p{font-size:12px;line-height:1.7}.preview-box{border:1px solid #f1d2e3;border-radius:18px;background:linear-gradient(140deg,#fff7fb,#fff);padding:16px;display:flex;gap:13px;align-items:center}.preview-box .link-avatar{width:58px;height:58px}.preview-box h4{font:800 14px Manrope}.preview-box p{font-size:11px;color:#a77b94;margin-top:5px;overflow-wrap:anywhere}.notice{font-size:11px;line-height:1.75;color:#a56c8a;background:#fff0f7;border:1px solid #f3c9dc;border-radius:13px;padding:12px 14px;margin-top:14px}.pass-dialog{width:min(440px,calc(100% - 30px));height:auto;max-height:90vh;overflow:auto;border:1px solid white;border-radius:27px;padding:28px;background:linear-gradient(145deg,#fffafd,#fff0f7);box-shadow:0 30px 100px #7e315b35}.pass-flower{width:58px;height:58px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(145deg,#f6a8cb,#df5b9c);color:white;font-size:27px;box-shadow:0 10px 25px #dc6ba23b;margin-bottom:20px}.pass-dialog h2{font:800 25px Manrope;letter-spacing:-.8px}.pass-dialog>p{font-size:12px;line-height:1.8;color:#a77b94;margin-top:8px}.pass-dialog .field{margin-top:22px}.pass-error{display:none;color:#c14479;font-size:11px;margin-top:10px}.pass-error.show{display:block}.toast{position:fixed;z-index:90;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#fffafd;border:1px solid #efc4d9;color:#874364;box-shadow:0 10px 35px #8c3b6226;border-radius:13px;padding:12px 17px;font-size:12px;font-weight:700;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:850px){.layout{grid-template-columns:minmax(0,1fr)}.side-stack{grid-template-columns:repeat(2,minmax(0,1fr))}.settings-shell{grid-template-columns:1fr;width:min(100% - 30px,800px);gap:16px}.settings-sidebar{position:static;display:flex;overflow-x:auto;gap:5px;padding:8px}.sidebar-label,.sidebar-bottom{display:none}.tab-btn{width:auto;flex:0 0 auto;padding:8px}.tab-btn .tab-icon{width:27px;height:27px}.settings-shell{margin-top:18px}}
-@media(max-width:560px){.shell{width:calc(100% - 24px)}.topbar{height:68px}.brand{font-size:22px}.top-note{font-size:10px;padding:7px 9px}.layout{padding-top:15px;gap:13px}.cover{height:155px}.profile-content{padding:0 20px 24px}.avatar{width:94px;height:94px;border-radius:27px;font-size:30px}.avatar-wrap{margin-top:-47px}.profile-stamp{font-size:9px}.display-name{font-size:28px}.bio{font-size:13px}.link-grid{grid-template-columns:1fr}.link-card{padding:11px}.side-stack{grid-template-columns:1fr}.profile-footer{padding:15px 18px}.settings-fab{right:15px;bottom:15px;width:54px;height:54px;border-radius:19px}.settings-fab small{display:none}.dialog-top{height:68px;padding:0 15px}.dialog-brand h1{font-size:14px}.settings-shell{width:calc(100% - 24px);margin:13px auto 35px}.tab-btn{font-size:11px;gap:7px;padding:7px}.tab-btn .tab-icon{display:none}.workspace-head h2{font-size:25px}.settings-card{padding:16px;border-radius:18px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.manager-item{gap:9px;padding:9px}.manager-item .link-avatar{width:43px;height:43px;border-radius:13px}.manager-actions{gap:5px}.manager-actions .btn{padding:8px;font-size:10px}.links-toolbar{align-items:flex-start}.links-toolbar .btn{white-space:nowrap}.form-actions .btn{flex:1}.preview-box{align-items:flex-start}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CherryNames - Minecraft Username Search & Drops</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* chewyy.site homepage: focus the public page on servers, communities and social links. */
-.layout{display:block;max-width:920px;padding:24px 0 100px}
-.profile-card{border-radius:30px;overflow:hidden;background:rgba(255,250,253,.9);box-shadow:0 28px 90px rgba(171,76,125,.16)}
-.cover,.avatar-wrap,.name-row,.handle,.bio,.chips,.side-stack,.profile-footer{display:none!important}
-.profile-content{padding:clamp(20px,4vw,38px)}
-.section-head{margin-top:0;margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid #f3d7e6}
-.section-head h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.8px}
-.section-head span{color:#a84f7d;background:#fff0f7;border:1px solid #f2c9dc;padding:7px 11px;border-radius:99px;white-space:nowrap}
-.link-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.link-card{min-height:96px;padding:16px;border-radius:20px;background:linear-gradient(135deg,#fff,#fff3f9);box-shadow:0 8px 24px rgba(173,92,133,.08)}
-.link-avatar{width:56px;height:56px;border-radius:17px}
-.empty-links{padding:46px 20px;background:linear-gradient(135deg,#fffafd,#fff0f7)}
-@media(max-width:620px){.shell{width:calc(100% - 22px)}.topbar{height:68px}.top-note{font-size:10px;padding:7px 9px}.layout{padding-top:14px}.profile-content{padding:21px 14px 25px}.link-grid{grid-template-columns:minmax(0,1fr);gap:10px}.link-card{min-height:82px;padding:13px}.link-avatar{width:50px;height:50px}}
+        :root {
+            /* Dark Pink & Purple Cherry Theme */
+            --bg-base: #0d0811;       /* Deepest plum/black */
+            --bg-panel: #160f1f;      /* Dark purple panel */
+            --bg-panel-hover: #21162c; /* Lighter purple for hover */
+            --bg-input: #100a16;
+            
+            --border-color: #2a1b38;
+            --border-highlight: #452a5c;
 
-</style>
+            --text-main: #f5f0f9;
+            --text-muted: #9d8aad;
+            --text-dark: #685777;
+
+            --accent-primary: #ff4d94;  /* Cherry Pink */
+            --accent-hover: #e63980;
+            --accent-secondary: #a855f7; /* Vibrant Purple */
+            --accent-bg: rgba(255, 77, 148, 0.1);
+            
+            --status-soon: #ff4d94;
+            --status-later: #a855f7;
+            --status-avail: #4ade80;
+            --status-taken: #f87171;
+
+            --font-family: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Icons --- */
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vertical-align: middle;
+        }
+
+        /* --- Layout --- */
+        .sidebar {
+            width: 250px;
+            background-color: var(--bg-base);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 15px;
+            flex-shrink: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .topbar {
+            height: 70px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background-color: var(--bg-base);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .content-area {
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- Sidebar Components --- */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            padding-left: 10px;
+            letter-spacing: -0.5px;
+        }
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent-primary);
+        }
+
+        .nav-menu {
+            list-style: none;
+            flex: 1;
+        }
+        .nav-menu li {
+            margin-bottom: 4px;
+        }
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .nav-menu a:hover {
+            color: var(--text-main);
+            background-color: var(--bg-panel);
+        }
+        .nav-menu a.active {
+            background-color: var(--accent-bg);
+            color: var(--accent-primary);
+            border: 1px solid rgba(255, 77, 148, 0.2);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 20px 10px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .sidebar-footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        /* --- Topbar Components --- */
+        .search-form {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+        .search-form input {
+            width: 100%;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 20px 12px 45px;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-form input:focus {
+            border-color: var(--accent-primary);
+        }
+        .search-form .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            width: 16px;
+            height: 16px;
+        }
+        
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--text-muted);
+        }
+        .sign-in-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .sign-in-btn:hover {
+            border-color: var(--accent-primary);
+            background: var(--accent-bg);
+            color: var(--accent-primary);
+        }
+
+        /* --- Main Content Panels --- */
+        .panel {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Section */
+        .hero-panel {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(22, 15, 31, 0.9), rgba(13, 8, 17, 0.9)), 
+                        url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-color: var(--border-highlight);
+        }
+        .hero-panel h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .hero-panel h1 span {
+            color: var(--accent-primary);
+            text-shadow: 0 0 20px rgba(255, 77, 148, 0.3);
+        }
+        .hero-panel p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 4px 20px rgba(255, 77, 148, 0.4);
+        }
+
+        /* Tables */
+        .panel-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .panel-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .panel-title svg {
+            stroke: var(--accent-primary);
+        }
+        .panel-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 400;
+        }
+        .view-all {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .view-all:hover {
+            background-color: var(--bg-panel-hover);
+            color: var(--text-main);
+            border-color: var(--border-highlight);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            padding: 14px 24px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.2);
+        }
+        td {
+            padding: 12px 24px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(42, 27, 56, 0.6);
+            color: var(--text-main);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: var(--bg-panel-hover);
+        }
+
+        .user-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        .mc-head {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: #222;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+            image-rendering: pixelated;
+        }
+
+        /* Status Badges */
+        .status {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .status.soon { background: rgba(255, 77, 148, 0.15); color: var(--status-soon); border: 1px solid rgba(255, 77, 148, 0.3); }
+        .status.later { background: rgba(168, 85, 247, 0.15); color: var(--status-later); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .status.available { color: var(--status-avail); }
+        .status.taken { color: var(--status-taken); }
+
+        /* --- Right Sidebar --- */
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .profile-card {
+            padding: 30px;
+            text-align: center;
+        }
+        .profile-head-large {
+            width: 96px;
+            height: 96px;
+            background-color: #2a1b38;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+            border: 2px solid var(--border-highlight);
+            box-shadow: 0 0 25px rgba(255, 77, 148, 0.15);
+            image-rendering: pixelated;
+            background-size: cover;
+        }
+        .profile-name {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .profile-status-text {
+            font-size: 13px;
+            color: var(--accent-primary);
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        .profile-status-text::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-primary);
+        }
+        
+        .profile-details {
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            background: var(--bg-input);
+            border-radius: 8px;
+            padding: 0 15px;
+            border: 1px solid var(--border-color);
+        }
+        .profile-details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .profile-details .row:last-child {
+            border-bottom: none;
+        }
+        .profile-details .row span:last-child {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-notify {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-notify:hover {
+            background: var(--accent-hover);
+        }
+        .btn-icon {
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-icon:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .info-card {
+            padding: 20px 24px;
+        }
+        .info-card h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .similar-list {
+            list-style: none;
+        }
+        .similar-list li a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-color);
+            transition: 0.2s;
+        }
+        .similar-list li:last-child a {
+            border-bottom: none;
+        }
+        .similar-list li a:hover {
+            color: var(--accent-primary);
+        }
+        .similar-list svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--text-muted);
+        }
+        .similar-list a:hover svg {
+            stroke: var(--accent-primary);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: var(--border-highlight); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-secondary); }
+
+    </style>
 </head>
 <body>
-<header class="topbar shell"><div class="brand"><span class="brand-flower">✿</span><span>chewyy<b>.site</b></span></div><div class="top-note"><span>✿</span> servers · communities · socials</div></header>
-<main class="shell layout">
-  <section class="profile-card" aria-label="Public profile">
-    <div class="cover" id="cover"><div class="cover-glow"></div></div>
-    <div class="profile-content">
-      <div class="avatar-wrap"><div class="avatar" id="mainAvatar">A</div><div class="profile-stamp">✿ made with a little love</div></div>
-      <div class="name-row"><h1 class="display-name" id="displayName">Your Name</h1><span class="verified" id="verifiedMark" title="Verified-style decoration" hidden>✿</span></div>
-      <div class="handle" id="handle">@yourname</div><p class="bio" id="bio">Welcome to my little corner of the internet. ✨</p>
-      <div class="chips" id="chips"></div>
-      <div class="section-head"><h2>Servers & socials</h2><span id="linkCount">0 links</span></div>
-      <div class="link-grid" id="publicLinks"><div class="empty-links">Your links will bloom here ✿</div></div>
-    </div>
-    <footer class="profile-footer"><span>✿ <strong>chewyy.site</strong> · your own little universe</span><span id="updatedText">freshly blooming</span></footer>
-  </section>
-  <aside class="side-stack">
-    <section class="side-card"><div class="mini-flower">🌸</div><div class="side-title">Your space, your style</div><p class="side-copy">Make this page feel like you. Add your socials, share your community, and give every link its own little profile card.</p><div class="preview-pill"><i></i> Flower-pink edition</div></section>
-    <section class="side-card"><div class="side-title">Your link garden</div><p class="side-copy" id="sideLinkSummary">Add Discord, YouTube, TikTok, or any website to grow your link garden.</p></section>
-  </aside>
-</main>
-<button class="settings-fab" id="openSettings" aria-label="Open settings"><span>⚙</span><small>Customize your page</small></button>
 
-<div class="overlay" id="passkeyOverlay" role="dialog" aria-modal="true" aria-labelledby="passTitle"><section class="pass-dialog"><div class="pass-flower">✿</div><h2 id="passTitle">Welcome to your studio</h2><p>Enter your passkey to open your private profile workspace and customize your little corner of the web.</p><form id="passkeyForm"><div class="field"><label for="passkeyInput">Studio passkey</label><input id="passkeyInput" type="password" autocomplete="current-password" placeholder="Enter your passkey" required></div><div class="pass-error" id="passkeyError">That passkey doesn't match. Try again.</div><div class="form-actions"><button type="button" class="btn soft" data-close-pass>Not now</button><button type="submit" class="btn primary">Unlock studio ↗</button></div></form><div class="notice">This is a browser-only demo. A passkey embedded in HTML can be viewed in the source code; public websites need server-side authentication.</div></section></div>
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            CherryNames
+        </div>
 
-<div class="overlay" id="settingsOverlay" role="dialog" aria-modal="true" aria-label="Profile settings studio">
-  <div class="dialog">
-    <div class="dialog-top"><div class="dialog-brand"><span class="brand-flower">✿</span><div><h1>chewyy.site Studio</h1><p>make your corner of the web yours</p></div></div><button class="close-btn" id="closeStudio">✕ &nbsp;Close studio</button></div>
-    <div class="settings-shell">
-      <nav class="settings-sidebar" aria-label="Settings tabs"><div class="sidebar-label">Your studio</div><button class="tab-btn active" data-tab="profile"><span class="tab-icon">♡</span>Profile</button><button class="tab-btn" data-tab="links"><span class="tab-icon">↗</span>Link garden <span id="navLinkCount"></span></button><button class="tab-btn" data-tab="appearance"><span class="tab-icon">✿</span>Appearance</button><div class="sidebar-bottom">A little customization goes a long way. ✨<br>Changes are saved in this browser.</div></nav>
-      <div class="workspace">
-        <section class="panel active" id="panel-profile"><div class="workspace-head"><div><h2>Your profile</h2><p>The basics people see when they land on your page. Make it sound like you.</p></div></div>
-          <form id="profileForm">
-            <div class="settings-card"><div class="card-heading"><div><h3>Identity & bio</h3><p>Your name, handle, and little introduction.</p></div></div><div class="form-grid">
-              <div class="field"><label for="nameInput">Display name</label><input id="nameInput" maxlength="70" placeholder="Your name"></div>
-              <div class="field"><label for="usernameInput">Username</label><input id="usernameInput" maxlength="40" placeholder="yourname"></div>
-              <div class="field full"><label for="bioInput">About you</label><textarea id="bioInput" maxlength="500" placeholder="A few words about you, your interests, or your vibe..."></textarea></div>
-              <div class="field full"><label for="chipsInput">Profile tags</label><input id="chipsInput" placeholder="creator, gamer, music lover"><div class="help">Separate tags with commas. They show as little pills on your profile.</div></div>
-            </div></div>
-            <div class="settings-card"><div class="card-heading"><div><h3>Profile pictures</h3><p>Use direct image URLs from images you have permission to use.</p></div></div><div class="form-grid"><div class="field full"><label for="avatarInput">Avatar image URL</label><input id="avatarInput" type="url" placeholder="https://example.com/avatar.png"></div><div class="field full"><label for="bannerInput">Cover image URL</label><input id="bannerInput" type="url" placeholder="https://example.com/banner.jpg"></div></div></div>
-            <div class="form-actions"><button type="button" class="btn soft" id="lockButton">Lock studio</button><button type="submit" class="btn primary">Save profile changes ✿</button></div>
-          </form>
-        </section>
-        <section class="panel" id="panel-links"><div class="workspace-head"><div><h2>Your link garden</h2><p>Add a social link and it becomes its own configurable card. Discord invites, YouTube channels, TikTok profiles, Twitch, Instagram, or any regular website all work.</p></div></div>
-          <div class="settings-card"><div class="links-toolbar"><div><h3 style="font:800 15px Manrope">Your links <span id="managerCount" style="color:#bd7b9f"></span></h3><p>Each card can have its own picture, title, and community stats.</p></div><button class="btn primary" id="addLinkBtn">＋ Add link</button></div><div class="link-manager-list" id="linkManagerList"></div><div class="notice">Follower, like, and member counts are editable display fields, not live platform data. Automatically fetching real counts usually requires official APIs and account permissions, so only enter counts you want to show.</div></div>
-        </section>
-        <section class="panel" id="panel-appearance"><div class="workspace-head"><div><h2>Appearance</h2><p>Little finishing touches for your flower-pink profile.</p></div></div>
-          <div class="settings-card"><div class="card-heading"><div><h3>Profile decorations</h3><p>Choose a cover style and optional flower badge.</p></div></div><div class="form-grid"><div class="field"><label for="themeInput">Accent mood</label><select id="themeInput"><option value="rose">Rose garden</option><option value="orchid">Pink orchid</option><option value="peach">Peach blossom</option><option value="berry">Berry bloom</option></select></div><div class="field"><label for="verifiedInput">Flower badge</label><select id="verifiedInput"><option value="no">Off</option><option value="yes">Show flower ✿</option></select></div></div><div class="form-actions"><button class="btn primary" id="saveAppearance" type="button">Save appearance ✿</button></div></div>
-          <div class="settings-card"><div class="card-heading"><div><h3>Preview card</h3><p>A tiny peek at your profile style.</p></div></div><div class="preview-box"><div class="link-avatar" id="appearanceFlower">✿</div><div><h4 id="appearancePreviewName">Your Name</h4><p>Soft petals, your links, your world.</p></div></div></div>
-        </section>
-      </div>
-    </div>
-  </div>
-</div>
+        <ul class="nav-menu">
+            <li><a href="#"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Usernames</a></li>
+            <li><a href="#" class="active"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Drops</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Statistics</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Tools</a></li>
+        </ul>
 
-<div class="overlay" id="linkEditorOverlay" role="dialog" aria-modal="true" aria-labelledby="linkEditorTitle"><section class="pass-dialog" style="width:min(620px,calc(100% - 24px));max-height:92vh;overflow:auto"><div class="pass-flower" id="editorFlower">↗</div><h2 id="linkEditorTitle">Add a link</h2><p>Give this link its own name, avatar, and stats card. We'll detect the platform from its URL.</p><form id="linkForm"><input type="hidden" id="linkIdInput"><div class="form-grid" style="margin-top:18px"><div class="field full"><label for="linkUrlInput">Link URL *</label><input id="linkUrlInput" type="url" placeholder="https://discord.gg/yourserver" required><div class="help">Paste a Discord invite, YouTube channel, TikTok profile, or any https:// link.</div></div><div class="field"><label for="linkPlatformInput">Platform</label><select id="linkPlatformInput"><option value="auto">Auto-detect from URL</option><option value="Discord">Discord</option><option value="YouTube">YouTube</option><option value="TikTok">TikTok</option><option value="Twitch">Twitch</option><option value="Instagram">Instagram</option><option value="Spotify">Spotify</option><option value="X / Twitter">X / Twitter</option><option value="GitHub">GitHub</option><option value="Website">Website / Other</option></select></div><div class="field"><label for="linkTitleInput">Card title</label><input id="linkTitleInput" maxlength="80" placeholder="e.g. My Discord server"></div><div class="field full"><label for="linkDescriptionInput">Subtitle / short description</label><input id="linkDescriptionInput" maxlength="120" placeholder="Come hang out with the community"></div><div class="field full"><label for="linkAvatarInput">Card picture URL</label><input id="linkAvatarInput" type="url" placeholder="https://example.com/community-pfp.png"><div class="help">Optional. Add a direct image URL for the server, channel, or account picture. If empty, we'll show a platform icon.</div></div><div class="field"><label for="linkFollowersInput">Followers / subscribers</label><input id="linkFollowersInput" inputmode="numeric" placeholder="e.g. 12500"></div><div class="field"><label for="linkMembersInput">Members / community</label><input id="linkMembersInput" inputmode="numeric" placeholder="e.g. 860"></div><div class="field"><label for="linkLikesInput">Likes</label><input id="linkLikesInput" inputmode="numeric" placeholder="e.g. 42000"></div><div class="field"><label for="linkLabelStatsInput">Custom stat label</label><input id="linkLabelStatsInput" maxlength="30" placeholder="e.g. active members"></div></div><div class="notice">Stats are displayed exactly as you enter them; this standalone HTML doesn't read live follower/member counts from social platforms.</div><div class="form-actions"><button type="button" class="btn soft" id="cancelLinkEdit">Cancel</button><button type="submit" class="btn primary">Save link card ✿</button></div></form></section></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-const SETTINGS_PASSKEY = "8y2384yhsrh87sdf98723";
-const STORAGE_KEY = 'aura_flower_pink_profile_v3';
-const DEFAULT_PROFILE = {name:'Your Name',username:'yourname',bio:'Welcome to my little corner of the internet. ✨',avatar:'',banner:'',chips:['Digital creator','Always exploring'],links:[],theme:'rose',verified:false};
-const $ = id => document.getElementById(id);
-let profile = loadProfile(), settingsUnlocked = false, editorWasEdit = false;
-const PLATFORMS = {
- 'Discord':{icon:'◈',color:'#5865f2',matches:/discord\.(gg|com)/i},
- 'YouTube':{icon:'▶',color:'#ff0033',matches:/(youtube\.com|youtu\.be)/i},
- 'TikTok':{icon:'♪',color:'#111111',matches:/tiktok\.com/i},
- 'Twitch':{icon:'▣',color:'#9146ff',matches:/twitch\.tv/i},
- 'Instagram':{icon:'◎',color:'#d84b86',matches:/instagram\.com/i},
- 'Spotify':{icon:'♫',color:'#1db954',matches:/spotify\.com/i},
- 'X / Twitter':{icon:'𝕏',color:'#222222',matches:/(x\.com|twitter\.com)/i},
- 'GitHub':{icon:'⌘',color:'#282828',matches:/github\.com/i},
- 'Website':{icon:'↗',color:'#d95b9b',matches:/.*/}
-};
-function loadProfile(){try{const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');return data?{...DEFAULT_PROFILE,...data,links:Array.isArray(data.links)?data.links:[]}:structuredClone(DEFAULT_PROFILE)}catch{return JSON.parse(JSON.stringify(DEFAULT_PROFILE))}}
-function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(profile));return true}catch{toast('Could not save in this browser.');return false}}
-function safeUrl(raw){try{const u=new URL(String(raw||'').trim());return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}}
-function platformFor(url,override='auto'){if(override&&override!=='auto'&&PLATFORMS[override])return override;return Object.keys(PLATFORMS).find(k=>k!=='Website'&&PLATFORMS[k].matches.test(url||''))||'Website'}
-function initial(name){return (String(name||'A').trim()[0]||'A').toUpperCase()}
-function formatCount(raw){if(raw===undefined||raw===null||String(raw).trim()==='')return '';const s=String(raw).trim();if(!/^\d+(\.\d+)?\s*[kmb]?$/i.test(s))return s;const n=Number.parseFloat(s);if(!Number.isFinite(n))return s;const suffix=(s.match(/[kmb]$/i)||[])[0];if(suffix)return s.toUpperCase();if(n>=1e6)return (n/1e6).toFixed(n>=1e7?0:1).replace(/\.0$/,'')+'M';if(n>=1e3)return (n/1e3).toFixed(n>=1e4?0:1).replace(/\.0$/,'')+'K';return s}
-function makeAvatar(url,name,platform){const el=document.createElement('div');el.className='link-avatar';el.style.setProperty('--platform',(PLATFORMS[platform]||PLATFORMS.Website).color);if(url){const img=document.createElement('img');img.src=url;img.alt='';img.loading='lazy';img.onerror=()=>{el.replaceChildren();el.textContent=(PLATFORMS[platform]||PLATFORMS.Website).icon};el.appendChild(img)}else el.textContent=(PLATFORMS[platform]||PLATFORMS.Website).icon;return el}
-function renderProfile(){
- $('displayName').textContent=profile.name||'Your Name';$('handle').textContent='@'+(profile.username||'yourname').replace(/^@/,'');$('bio').textContent=profile.bio||'';$('verifiedMark').hidden=!profile.verified;
- const avatar=$('mainAvatar');avatar.replaceChildren();if(profile.avatar){const img=document.createElement('img');img.src=profile.avatar;img.alt='Profile avatar';img.onerror=()=>avatar.textContent=initial(profile.name);avatar.appendChild(img)}else avatar.textContent=initial(profile.name);
- const cover=$('cover');cover.style.backgroundImage=profile.banner?`linear-gradient(125deg,#b64e8b25,#9b4c9430),url("${profile.banner.replace(/["\\]/g,'')}")`:'';
- const chips=$('chips');chips.replaceChildren();(profile.chips||[]).filter(Boolean).slice(0,10).forEach(t=>{const e=document.createElement('span');e.className='chip';e.textContent=t;chips.appendChild(e)});
- const list=$('publicLinks');list.replaceChildren();const links=(profile.links||[]).filter(x=>safeUrl(x.url));$('linkCount').textContent=links.length+' '+(links.length===1?'link':'links');$('navLinkCount').textContent=links.length?`(${links.length})`:'';$('managerCount').textContent=`(${links.length})`;$('sideLinkSummary').textContent=links.length?`Your link garden has ${links.length} ${links.length===1?'link':'links'} in bloom. Open the studio to edit any card, add profile pictures, and customize displayed community stats.`:'Add Discord, YouTube, TikTok, or any website to grow your link garden.';
- if(!links.length){const e=document.createElement('div');e.className='empty-links';e.innerHTML='✿<br><strong style="display:block;margin:7px 0 4px;color:#a35b80">Your links will bloom here</strong>Add your first link from the settings studio.';list.appendChild(e)}
- links.forEach(item=>{const url=safeUrl(item.url),plat=platformFor(url,item.platform||'auto'),meta=PLATFORMS[plat]||PLATFORMS.Website;const a=document.createElement('a');a.className='link-card';a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.style.setProperty('--platform',meta.color);a.appendChild(makeAvatar(item.avatar, item.title,plat));const copy=document.createElement('div');copy.className='link-copy';const title=document.createElement('div');title.className='link-title';title.textContent=item.title||plat;const sub=document.createElement('div');sub.className='link-subtitle';sub.textContent=item.description||plat;copy.append(title,sub);const stats=document.createElement('div');stats.className='link-stats';[['followers','followers'],['members',item.statLabel||'members'],['likes','likes']].forEach(([key,label])=>{if(String(item[key]||'').trim()){const s=document.createElement('span');s.className='stat';s.textContent=`${formatCount(item[key])} ${label}`;stats.appendChild(s)}});if(stats.childNodes.length)copy.appendChild(stats);const arrow=document.createElement('span');arrow.className='link-arrow';arrow.textContent='↗';a.append(copy,arrow);list.appendChild(a)});
- $('updatedText').textContent='Updated '+new Date().toLocaleDateString(undefined,{month:'short',day:'numeric'});$('appearancePreviewName').textContent=profile.name||'Your Name';document.title=(profile.name||'Your Name')+' — chewyy.site';$('themeInput').value=profile.theme||'rose';$('verifiedInput').value=profile.verified?'yes':'no';applyTheme(profile.theme||'rose');renderLinkManager();
-}
-function applyTheme(theme){const themes={rose:['#df5b9c','#f18cbd','#ffd9e9'],orchid:['#ba68b8','#e5a0de','#f2d9f4'],peach:['#df7d79','#f3a59a','#ffe1d7'],berry:['#bd4e86','#e67da9','#f5c9dd']};const t=themes[theme]||themes.rose;document.documentElement.style.setProperty('--pink',t[0]);document.documentElement.style.setProperty('--hot',t[1]);document.documentElement.style.setProperty('--rose',t[2]);$('appearanceFlower').style.background=`linear-gradient(145deg,${t[1]},${t[0]})`;$('appearanceFlower').style.color='white'}
-function renderLinkManager(){const box=$('linkManagerList');if(!box)return;box.replaceChildren();const links=profile.links||[];if(!links.length){const e=document.createElement('div');e.className='manager-empty';e.innerHTML='<div style="font-size:30px">🌷</div><strong>Your garden is waiting to bloom</strong><p>Add your first social or website link. Every link gets its own editable card.</p><button class="btn primary" id="emptyAddLink" style="margin-top:14px">＋ Add your first link</button>';box.appendChild(e);$('emptyAddLink').addEventListener('click',()=>openLinkEditor());return}
- links.forEach((item,index)=>{const plat=platformFor(item.url,item.platform||'auto');const row=document.createElement('div');row.className='manager-item';row.appendChild(makeAvatar(item.avatar,item.title,plat));const copy=document.createElement('div');copy.className='manager-copy';const strong=document.createElement('strong');strong.textContent=item.title||plat;const small=document.createElement('small');small.textContent=(item.description?item.description+' · ':'')+item.url;copy.append(strong,small);row.appendChild(copy);const actions=document.createElement('div');actions.className='manager-actions';const edit=document.createElement('button');edit.className='btn soft small';edit.textContent='Edit';edit.addEventListener('click',()=>openLinkEditor(index));const del=document.createElement('button');del.className='btn danger small';del.textContent='Delete';del.addEventListener('click',()=>{if(confirm('Delete this link card?')){profile.links.splice(index,1);save();renderProfile();toast('Link removed from your garden.')}});actions.append(edit,del);row.appendChild(actions);box.appendChild(row)})}
-function showTab(tab){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+tab));if(tab==='links')renderLinkManager()}
-function openSettings(){ $('passkeyInput').value='';$('passkeyError').classList.remove('show');$('passkeyOverlay').classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>$('passkeyInput').focus(),60)}
-function unlock(){settingsUnlocked=true;$('nameInput').value=profile.name||'';$('usernameInput').value=profile.username||'';$('bioInput').value=profile.bio||'';$('avatarInput').value=profile.avatar||'';$('bannerInput').value=profile.banner||'';$('chipsInput').value=(profile.chips||[]).join(', ');$('passkeyOverlay').classList.remove('open');$('settingsOverlay').classList.add('open');showTab('profile')}
-function closeStudio(){settingsUnlocked=false;$('settingsOverlay').classList.remove('open');$('linkEditorOverlay').classList.remove('open');$('passkeyOverlay').classList.remove('open');document.body.style.overflow=''}
-function toast(message){const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2500)}
-function openLinkEditor(index=null){if(!settingsUnlocked)return;editorWasEdit=index!==null;const item=index!==null?profile.links[index]:{url:'',platform:'auto',title:'',description:'',avatar:'',followers:'',members:'',likes:'',statLabel:''};$('linkEditorTitle').textContent=index===null?'Add a link':'Configure your link';$('linkIdInput').value=index===null?'':String(index);$('linkUrlInput').value=item.url||'';$('linkPlatformInput').value=item.platform||'auto';$('linkTitleInput').value=item.title||'';$('linkDescriptionInput').value=item.description||'';$('linkAvatarInput').value=item.avatar||'';$('linkFollowersInput').value=item.followers||'';$('linkMembersInput').value=item.members||'';$('linkLikesInput').value=item.likes||'';$('linkLabelStatsInput').value=item.statLabel||'';updateLinkEditorPreview();$('linkEditorOverlay').classList.add('open');setTimeout(()=>$('linkUrlInput').focus(),50)}
-function updateLinkEditorPreview(){const url=$('linkUrlInput').value,platform=platformFor(url,$('linkPlatformInput').value),meta=PLATFORMS[platform]||PLATFORMS.Website;$('editorFlower').textContent=meta.icon;$('editorFlower').style.background=`linear-gradient(145deg,${meta.color},#e77cb3)`;if(!$('linkTitleInput').value.trim()&&url){$('linkTitleInput').placeholder='e.g. '+platform+' profile'} }
-$('openSettings').addEventListener('click',openSettings);$('passkeyForm').addEventListener('submit',e=>{e.preventDefault();if($('passkeyInput').value===SETTINGS_PASSKEY)unlock();else{$('passkeyError').classList.add('show');$('passkeyInput').select()}});
-document.querySelectorAll('[data-close-pass]').forEach(b=>b.addEventListener('click',closeStudio));$('closeStudio').addEventListener('click',closeStudio);$('lockButton').addEventListener('click',closeStudio);$('cancelLinkEdit').addEventListener('click',()=>$('linkEditorOverlay').classList.remove('open'));$('addLinkBtn').addEventListener('click',()=>openLinkEditor());document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
-document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){if(o.id==='linkEditorOverlay')o.classList.remove('open');else closeStudio()}}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('linkEditorOverlay').classList.contains('open'))$('linkEditorOverlay').classList.remove('open');else closeStudio()}});
-$('profileForm').addEventListener('submit',e=>{e.preventDefault();if(!settingsUnlocked)return closeStudio();const avatar=$('avatarInput').value.trim(),banner=$('bannerInput').value.trim();for(const [label,val] of [['Avatar',avatar],['Cover image',banner]])if(val&&!safeUrl(val)){toast(label+' must be a valid http(s) image URL.');return}profile.name=$('nameInput').value.trim()||'Your Name';profile.username=$('usernameInput').value.trim().replace(/^@/,'')||'yourname';profile.bio=$('bioInput').value.trim();profile.avatar=avatar;profile.banner=banner;profile.chips=$('chipsInput').value.split(',').map(x=>x.trim()).filter(Boolean).slice(0,10);if(save()){renderProfile();toast('Profile changes saved ✿')}});
-$('linkUrlInput').addEventListener('input',()=>{if($('linkPlatformInput').value==='auto')updateLinkEditorPreview()});$('linkPlatformInput').addEventListener('change',updateLinkEditorPreview);
-$('linkForm').addEventListener('submit',e=>{e.preventDefault();if(!settingsUnlocked)return closeStudio();const raw=$('linkUrlInput').value.trim(),url=safeUrl(raw);if(!url){toast('Please enter a valid http(s) link.');return}const chosen=$('linkPlatformInput').value,platform=platformFor(url,chosen),item={id:$('linkIdInput').value||String(Date.now()),url,platform,title:$('linkTitleInput').value.trim()||platform,description:$('linkDescriptionInput').value.trim()||platform,avatar:$('linkAvatarInput').value.trim(),followers:$('linkFollowersInput').value.trim(),members:$('linkMembersInput').value.trim(),likes:$('linkLikesInput').value.trim(),statLabel:$('linkLabelStatsInput').value.trim()};if(item.avatar&&!safeUrl(item.avatar)){toast('Card picture must be a valid http(s) URL.');return}const idx=$('linkIdInput').value;if(idx!=='')profile.links[Number(idx)]=item;else profile.links.push(item);if(save()){ $('linkEditorOverlay').classList.remove('open');renderProfile();showTab('links');toast(idx!==''?'Link card updated ✿':'New link card added ✿')}});
-$('saveAppearance').addEventListener('click',()=>{profile.theme=$('themeInput').value;profile.verified=$('verifiedInput').value==='yes';if(save()){applyTheme(profile.theme);renderProfile();showTab('appearance');toast('Your style has been saved ✿')}});
-renderProfile();
-</script>
-</body></html>
+        <div class="sidebar-footer">
+            Find the perfect<br>Minecraft username.<br><br>
+            <a href="#">Explore.</a> <a href="#">Search.</a> <a href="#">Claim.</a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+        
+        <!-- Top Navigation -->
+        <header class="topbar">
+            <div class="search-form">
+                <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search for a Minecraft username...">
+            </div>
+            <div class="topbar-actions">
+                <svg viewBox="0 0 24 24" style="cursor:pointer; width:20px; height:20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <button class="sign-in-btn">Sign in</button>
+            </div>
+        </header>
+
+        <div class="content-area">
+            
+            <!-- Left Column (Main Content) -->
+            <div class="left-col">
+                
+                <!-- Hero Panel -->
+                <div class="panel hero-panel">
+                    <h1>Minecraft Username <span>Drops</span></h1>
+                    <p>See when usernames will be available, how long they've been inactive, and catch your favorite names before someone else does.</p>
+                    <div class="search-bar" style="display:flex; gap:10px; max-width:500px;">
+                        <input type="text" placeholder="Search for a username..." style="flex:1; background-color: rgba(19, 12, 26, 0.8); border: 1px solid var(--border-color); color: var(--text-main); padding: 12px 20px; border-radius: 8px; font-size: 14px; outline: none;">
+                        <button class="btn-primary">Search</button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Drops Table -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <div class="panel-title">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                Upcoming Username Drops
+                            </div>
+                            <div class="panel-subtitle">Here are the next usernames that will be available soon based on inactivity or name changes.</div>
+                        </div>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Drop Time</th>
+                                <th>Time Remaining</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/MHF_Steve/32.png" class="mc-head" alt="head"> Zyphix</div></td>
+                                <td>Apr 28, 2025 · 2:14 PM</td>
+                                <td>3h 20m</td>
+                                <td><span class="status soon">Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/MHF_Alex/32.png" class="mc-head" alt="head"> NotKira</div></td>
+                                <td>Apr 26, 2025 · 4:32 PM</td>
+                                <td>5h 38m</td>
+                                <td><span class="status soon">Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Notch/32.png" class="mc-head" alt="head"> Luna</div></td>
+                                <td>Apr 26, 2025 · 7:10 PM</td>
+                                <td>8h 16m</td>
+                                <td><span class="status soon">Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Herobrine/32.png" class="mc-head" alt="head"> xFrosty</div></td>
+                                <td>Apr 27, 2025 · 12:45 AM</td>
+                                <td>1d 14h</td>
+                                <td><span class="status later">Later</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Dinnerbone/32.png" class="mc-head" alt="head"> ItzVortex</div></td>
+                                <td>Apr 27, 2025 · 3:21 AM</td>
+                                <td>1d 16h</td>
+                                <td><span class="status later">Later</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/jeb_/32.png" class="mc-head" alt="head"> Shadowz</div></td>
+                                <td>Apr 27, 2025 · 9:08 AM</td>
+                                <td>1d 22h</td>
+                                <td><span class="status later">Later</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Steve/32.png" class="mc-head" alt="head"> Pxlr</div></td>
+                                <td>Apr 28, 2025 · 6:17 PM</td>
+                                <td>2d 19h</td>
+                                <td><span class="status later">Later</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Recently Dropped Table -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <div class="panel-title">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                Recently Dropped
+                            </div>
+                            <div class="panel-subtitle">These usernames were just released and may still be available!</div>
+                        </div>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Dropped At</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Alex/32.png" class="mc-head" alt="head"> Solaris</div></td>
+                                <td>Apr 26, 2025 · 10:02 AM</td>
+                                <td><span class="status available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Technoblade/32.png" class="mc-head" alt="head"> xBreezy</div></td>
+                                <td>Apr 26, 2025 · 8:47 AM</td>
+                                <td><span class="status available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/Dream/32.png" class="mc-head" alt="head"> Velix</div></td>
+                                <td>Apr 26, 2025 · 6:31 AM</td>
+                                <td><span class="status taken">Taken</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="user-cell"><img src="https://minotar.net/helm/GeorgeNotFound/32.png" class="mc-head" alt="head"> Frostbyte</div></td>
+                                <td>Apr 26, 2025 · 4:12 AM</td>
+                                <td><span class="status taken">Taken</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Right Column (Sidebar widgets) -->
+            <div class="right-col">
+                
+                <!-- Profile Widget -->
+                <div class="panel profile-card">
+                    <img src="https://minotar.net/helm/MHF_Steve/96.png" class="profile-head-large" alt="Profile Head">
+                    <div class="profile-name">Zyphix</div>
+                    <div class="profile-status-text">Dropping Soon</div>
+                    
+                    <div class="profile-details">
+                        <div class="row">
+                            <span>Drop Time</span>
+                            <span>Apr 26, 2:14 PM</span>
+                        </div>
+                        <div class="row">
+                            <span>Time Remaining</span>
+                            <span>3h 20m</span>
+                        </div>
+                        <div class="row">
+                            <span>Last Seen</span>
+                            <span>30 days ago</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <button class="btn-notify">
+                            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            Notify Me
+                        </button>
+                        <button class="btn-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- About Widget -->
+                <div class="panel info-card">
+                    <h3>About This Username</h3>
+                    <div class="profile-details" style="margin-bottom:0; background:transparent; padding:0; border:none;">
+                        <div class="row" style="padding: 8px 0;">
+                            <span>Length</span>
+                            <span>6 characters</span>
+                        </div>
+                        <div class="row" style="padding: 8px 0;">
+                            <span>First Seen</span>
+                            <span>Jul 14, 2021</span>
+                        </div>
+                        <div class="row" style="padding: 8px 0;">
+                            <span>Last Seen</span>
+                            <span>Mar 26, 2025</span>
+                        </div>
+                        <div class="row" style="padding: 8px 0; border:none;">
+                            <span>Previous Names</span>
+                            <span>None</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Usernames Widget -->
+                <div class="panel info-card">
+                    <h3>Similar Usernames</h3>
+                    <ul class="similar-list">
+                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyphixx</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyph1x</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                        <li><a href="#"><span><svg viewBox="0 0 24 24" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zyphix_</span> <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
