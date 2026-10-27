@@ -512,7 +512,30 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* DONATION SECTION STYLES */
+/* NEW DONATION CALLOUT BOX (ON ABOUT PAGE) */
+.donation-callout {
+  margin-top: 40px;
+  padding: 30px 20px;
+  border: 1px solid #ff39874d; /* Semi-transparent pink border */
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ff39870a, #ff398714); /* Subtle pink background */
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(255, 57, 135, 0.05);
+}
+
+.donation-callout h3 {
+  font-size: 20px;
+  color: var(--pink2);
+  margin-bottom: 10px;
+}
+
+.donation-callout p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #e7dce9;
+}
+
+/* DONATION SECTION STYLES (ON SUPPORT PAGE) */
 .donation-section {
   margin-top: 60px;
   padding-top: 40px;
@@ -811,6 +834,19 @@ footer {
         I may expand it with <strong>more plugins, resources, and maybe even other game mods</strong>. 
         This is a growing project made with love for server owners and players alike.
       </p>
+
+      <!-- NEW DONATION CALLOUT SECTION -->
+      <div class="donation-callout">
+        <h3>Want to help me make better plugins? ❤️</h3>
+        <p>
+          If you would like to support me and help me keep making great plugins for free, 
+          you can donate by going to the Support page and scrolling down!
+        </p>
+        <button onclick="showView('support')" class="button" style="margin-top: 5px;">
+          ✉ Go to Support Page
+        </button>
+      </div>
+
       <div class="about-actions">
         <a onclick="showView('plugins')" class="button">🍒 Browse Plugins</a>
         <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
