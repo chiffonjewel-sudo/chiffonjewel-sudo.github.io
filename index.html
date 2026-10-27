@@ -330,6 +330,26 @@ h1 {
   color: var(--muted);
 }
 
+/* NEW PAPER ONLY ALERT */
+.paper-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 193, 7, 0.1); /* Subtle gold background */
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: #ffca28; /* Gold text */
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 10px 25px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.paper-alert-icon {
+  font-size: 18px;
+}
+
 /* SINGLE PLUGIN LAYOUT */
 .plugin-grid {
   display: flex;
@@ -512,7 +532,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* NEW DONATION CALLOUT BOX (ON ABOUT PAGE) */
+/* DONATION CALLOUT BOX (ON ABOUT PAGE) */
 .donation-callout {
   margin-top: 40px;
   padding: 30px 20px;
@@ -763,6 +783,12 @@ footer {
       <p>Explore our collection of high-quality plugins. Click download to get started!</p>
     </div>
 
+    <!-- NEW PAPER ONLY ALERT -->
+    <div class="paper-alert">
+      <span class="paper-alert-icon">📄</span>
+      <span>Note: All plugins as of right now are <strong>Paper only</strong>.</span>
+    </div>
+
     <div class="plugin-grid">
 
       <!-- EnderChest Plugin Card -->
@@ -835,7 +861,7 @@ footer {
         This is a growing project made with love for server owners and players alike.
       </p>
 
-      <!-- NEW DONATION CALLOUT SECTION -->
+      <!-- DONATION CALLOUT SECTION -->
       <div class="donation-callout">
         <h3>Want to help me make better plugins? ❤️</h3>
         <p>
