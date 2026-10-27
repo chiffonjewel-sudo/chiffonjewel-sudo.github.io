@@ -462,9 +462,9 @@ h1 {
 .benefit h3 { font-size: 12px; }
 .benefit p { color: var(--muted); font-size: 10px; }
 
-/* ABOUT SECTION (HIDDEN BY DEFAULT) */
+/* ABOUT & SUPPORT SECTIONS (HIDDEN BY DEFAULT) */
 
-.about-section {
+.about-section, .support-section {
   display: none;
   padding: 120px 0 60px;
   min-height: 70vh;
@@ -473,39 +473,39 @@ h1 {
     #0b0710;
 }
 
-.about-section.active {
+.about-section.active, .support-section.active {
   display: block;
 }
 
-.about-content {
+.about-content, .support-content {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
 }
 
-.about-content .section-label {
+.about-content .section-label, .support-content .section-label {
   display: block;
   margin-bottom: 8px;
 }
 
-.about-content h2 {
+.about-content h2, .support-content h2 {
   font-size: clamp(30px, 5vw, 42px);
   letter-spacing: -1.5px;
   margin-bottom: 20px;
 }
 
-.about-content p {
+.about-content p, .support-content p {
   color: #d4c9dc;
   font-size: 15px;
   line-height: 1.9;
   margin-bottom: 16px;
 }
 
-.about-content p strong {
+.about-content p strong, .support-content p strong {
   color: var(--pink2);
 }
 
-.about-actions {
+.about-actions, .support-actions {
   margin-top: 32px;
   display: flex;
   justify-content: center;
@@ -583,6 +583,7 @@ footer {
     <a onclick="showView('home')">⌂ Home</a>
     <a onclick="showView('plugins')">◇ Plugins</a>
     <a onclick="showView('about')">♙ About</a>
+    <a onclick="showView('support')">✉ Support</a>
   </div>
   <a onclick="showView('home')" class="button">🍒 Download Now</a>
 </nav>
@@ -742,6 +743,35 @@ footer {
   </div>
 </section>
 
+<!-- SUPPORT VIEW (HIDDEN BY DEFAULT) -->
+<section class="support-section" id="support-view">
+  <div class="container">
+    <div class="support-content">
+      <div class="section-label">🍒 &nbsp; NEED HELP?</div>
+      <h2>Contact <span class="gradient">Support</span></h2>
+      <p>
+        Having trouble with a plugin? Found a bug? Or just have a question? 
+        I'm here to help! You can reach out to me directly at my work email.
+      </p>
+      <p>
+        Please include your <strong>Minecraft server version</strong> and the <strong>plugin version</strong> 
+        you are using in your email so I can assist you faster.
+      </p>
+      
+      <div class="support-actions">
+        <!-- This creates a mailto link that opens their email app -->
+        <a href="mailto:chiffon.work.support@gmail.com" class="button" style="font-size: 15px; padding: 15px 30px;">
+          ✉ chiffon.work.support@gmail.com
+        </a>
+      </div>
+      
+      <div style="margin-top: 30px;">
+        <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-main">
@@ -755,6 +785,7 @@ footer {
           <a onclick="showView('home')">Home</a>
           <a onclick="showView('plugins')">Plugins</a>
           <a onclick="showView('about')">About</a>
+          <a onclick="showView('support')">Support</a>
         </div>
       </div>
     </div>
@@ -771,6 +802,7 @@ function showView(viewName) {
   document.getElementById('home-view').style.display = 'none';
   document.getElementById('plugins-view').classList.remove('active');
   document.getElementById('about-view').classList.remove('active');
+  document.getElementById('support-view').classList.remove('active');
   
   // Show the selected view
   if (viewName === 'home') {
@@ -779,6 +811,8 @@ function showView(viewName) {
     document.getElementById('plugins-view').classList.add('active');
   } else if (viewName === 'about') {
     document.getElementById('about-view').classList.add('active');
+  } else if (viewName === 'support') {
+    document.getElementById('support-view').classList.add('active');
   }
 
   // Scroll to the top of the page
