@@ -672,4 +672,231 @@ footer {
 
         <div class="category-grid">
           <!-- Minecraft Plugins Category -->
-          <div class="category-card" onclick
+          <div class="category-card" onclick="showView('plugins')">
+            <div class="pixel-art-wrapper">
+              <div class="mc-block"></div>
+            </div>
+            <h3>Minecraft Plugins</h3>
+            <p>Browse my custom-coded plugins for your Minecraft server.</p>
+          </div>
+
+          <!-- Coming Soon Category -->
+          <div class="category-card coming-soon">
+            <div class="category-icon-emoji">📦</div>
+            <h3>Other Stuff</h3>
+            <p>More resources, mods, and tools coming in the future!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- PLUGINS VIEW (HIDDEN BY DEFAULT) -->
+<section class="plugins-section" id="plugins-view">
+  <div class="container">
+    <div class="back-btn" onclick="showView('home')">
+      ← Back to Categories
+    </div>
+    
+    <div class="section-header">
+      <div class="section-label">🍒 &nbsp; MINECRAFT PLUGINS</div>
+      <h2>All <span class="gradient">Minecraft Plugins</span></h2>
+      <p>Explore our collection of high-quality plugins. Click download to get started!</p>
+    </div>
+
+    <div class="plugin-grid">
+
+      <article class="plugin-card">
+        <div class="plugin-top">
+          <div class="plugin-icon">🍒</div>
+          <div>
+            <h3>CherryCore</h3>
+            <p class="plugin-tagline">The heart of your server.</p>
+          </div>
+        </div>
+        <p class="plugin-description">
+          A utility plugin providing essential features, performance
+          improvements, and a smooth server experience.
+        </p>
+        <div class="tags">
+          <span class="tag">Utility</span>
+          <span class="tag">Performance</span>
+          <span class="tag">Essentials</span>
+        </div>
+        <div class="plugin-meta">
+          <span>▣ v1.2.0</span>
+          <span>◷ 1.21+</span>
+        </div>
+        <a class="button download" href="downloads/cherrycore.jar" download>↓ &nbsp; Download</a>
+      </article>
+
+      <article class="plugin-card">
+        <div class="plugin-top">
+          <div class="plugin-icon">⚔️</div>
+          <div>
+            <h3>PvPManager</h3>
+            <p class="plugin-tagline">Balanced. Fair. Fun.</p>
+          </div>
+        </div>
+        <p class="plugin-description">
+          Manage your PvP experience with custom kits, cooldowns,
+          and more. Perfect for survival and minigames!
+        </p>
+        <div class="tags">
+          <span class="tag">PvP</span>
+          <span class="tag">Kits</span>
+          <span class="tag">Cooldowns</span>
+        </div>
+        <div class="plugin-meta">
+          <span>▣ v1.0.0</span>
+          <span>◷ 1.21+</span>
+        </div>
+        <a class="button download" href="downloads/pvpmanager.jar" download>↓ &nbsp; Download</a>
+      </article>
+
+      <article class="plugin-card">
+        <div class="plugin-top">
+          <div class="plugin-icon">🟩</div>
+          <div>
+            <h3>LandClaim</h3>
+            <p class="plugin-tagline">Protect what's yours.</p>
+          </div>
+        </div>
+        <p class="plugin-description">
+          Allow players to claim land, set permissions, and keep
+          their builds safe from griefers. Simple and effective.
+        </p>
+        <div class="tags">
+          <span class="tag">Land</span>
+          <span class="tag">Protection</span>
+          <span class="tag">Permissions</span>
+        </div>
+        <div class="plugin-meta">
+          <span>▣ v1.1.0</span>
+          <span>◷ 1.21+</span>
+        </div>
+        <a class="button download" href="downloads/landclaim.jar" download>↓ &nbsp; Download</a>
+      </article>
+
+      <article class="plugin-card">
+        <div class="plugin-top">
+          <div class="plugin-icon">📦</div>
+          <div>
+            <h3>ShopPlugin</h3>
+            <p class="plugin-tagline">Player shops made easy.</p>
+          </div>
+        </div>
+        <p class="plugin-description">
+          Create custom shops, set prices, manage inventories,
+          and let your players trade with ease.
+        </p>
+        <div class="tags">
+          <span class="tag">Economy</span>
+          <span class="tag">Shops</span>
+          <span class="tag">Trading</span>
+        </div>
+        <div class="plugin-meta">
+          <span>▣ v1.3.0</span>
+          <span>◷ 1.21+</span>
+        </div>
+        <a class="button download" href="downloads/shopplugin.jar" download>↓ &nbsp; Download</a>
+      </article>
+
+    </div>
+
+    <section class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon">⟳</div>
+        <h3>Regular Updates</h3>
+        <p>Keep your server fresh</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">♧</div>
+        <h3>Fast Support</h3>
+        <p>We're here to help</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">♢</div>
+        <h3>Safety First</h3>
+        <p>Know what you install</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">♡</div>
+        <h3>Made for the Community</h3>
+        <p>By a fellow player</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ABOUT VIEW (HIDDEN BY DEFAULT) -->
+<section class="about-section" id="about-view">
+  <div class="container">
+    <div class="about-content">
+      <div class="section-label">🍒 &nbsp; ABOUT CHERRY PLUGINS</div>
+      <h2>Why I <span class="gradient">Built This</span></h2>
+      <p>
+        I created this website as a place to <strong>upload and share my Minecraft plugins</strong> 
+        with the community. I'm a Minecraft enthusiast who loves building tools that make 
+        servers more fun, reliable, and easier to manage.
+      </p>
+      <p>
+        Right now, this site is focused on my custom plugins — but in the future, 
+        I may expand it with <strong>more plugins, resources, and maybe even other game mods</strong>. 
+        This is a growing project made with love for server owners and players alike.
+      </p>
+      <div class="about-actions">
+        <a onclick="showView('plugins')" class="button">🍒 Browse Plugins</a>
+        <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div>
+        <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
+        <p style="margin-top:15px">🍒 Made for Minecraft server owners.</p>
+      </div>
+
+      <div>
+        <div class="footer-links">
+          <a onclick="showView('home')">Home</a>
+          <a onclick="showView('plugins')">Plugins</a>
+          <a onclick="showView('about')">About</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Cherry Plugins. All rights reserved. Made with ♥
+    </div>
+  </div>
+</footer>
+
+<script>
+function showView(viewName) {
+  // Hide all views
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('plugins-view').classList.remove('active');
+  document.getElementById('about-view').classList.remove('active');
+  
+  // Show the selected view
+  if (viewName === 'home') {
+    document.getElementById('home-view').style.display = 'block';
+  } else if (viewName === 'plugins') {
+    document.getElementById('plugins-view').classList.add('active');
+  } else if (viewName === 'about') {
+    document.getElementById('about-view').classList.add('active');
+  }
+
+  // Scroll to the top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
