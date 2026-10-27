@@ -513,6 +513,80 @@ h1 {
   flex-wrap: wrap;
 }
 
+/* DONATION SECTION STYLES */
+.donation-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #3d273f;
+}
+
+.donation-section h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.donation-section p {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.donation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+  border: 1px solid;
+}
+
+.donate-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Specific styles for each crypto button */
+.btn-btc {
+  background: #f7931a1a;
+  border-color: #f7931a;
+  color: #f7931a;
+}
+.btn-btc:hover {
+  background: #f7931a33;
+  box-shadow: 0 4px 15px #f7931a33;
+}
+
+.btn-sol {
+  background: #14f1951a;
+  border-color: #14f195;
+  color: #14f195;
+}
+.btn-sol:hover {
+  background: #14f19533;
+  box-shadow: 0 4px 15px #14f19533;
+}
+
+.btn-paypal {
+  background: #0030871a;
+  border-color: #0079C1;
+  color: #0079C1;
+}
+.btn-paypal:hover {
+  background: #00308733;
+  box-shadow: 0 4px 15px #00308733;
+}
+
 /* FOOTER */
 
 footer {
@@ -571,6 +645,8 @@ footer {
   .benefit:nth-child(-n+2) { border-bottom: 1px solid #34213a; padding-bottom: 14px; }
   .benefit:nth-child(n+3) { padding-top: 14px; }
   .footer-main { grid-template-columns: 1fr; gap: 22px; }
+  .donation-buttons { flex-direction: column; }
+  .donate-btn { width: 100%; }
 }
 </style>
 </head>
@@ -767,6 +843,30 @@ footer {
       
       <div style="margin-top: 30px;">
         <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
+      </div>
+
+      <!-- NEW DONATION SECTION -->
+      <div class="donation-section">
+        <h3>Support My Work ❤️</h3>
+        <p>
+          If you enjoy my plugins and want to support me to keep making great tools for free, 
+          I would deeply appreciate any donations! You can support me through these platforms:
+        </p>
+        
+        <div class="donation-buttons">
+          <!-- Replace the href links below with your actual wallet or payment links -->
+          <a href="bitcoin:YOUR_BTC_ADDRESS_HERE" class="donate-btn btn-btc" target="_blank">
+            ₿ Bitcoin (BTC)
+          </a>
+          
+          <a href="solana:YOUR_SOL_ADDRESS_HERE" class="donate-btn btn-sol" target="_blank">
+            ◎ Solana (SOL)
+          </a>
+          
+          <a href="https://paypal.me/YOUR_PAYPAL_LINK" class="donate-btn btn-paypal" target="_blank">
+            💳 PayPal
+          </a>
+        </div>
       </div>
     </div>
   </div>
