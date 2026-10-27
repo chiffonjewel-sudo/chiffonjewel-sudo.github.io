@@ -316,14 +316,17 @@ h1 {
   color: var(--muted);
 }
 
+/* SINGLE PLUGIN LAYOUT */
 .plugin-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  justify-content: center; /* Centers the single card */
   gap: 15px;
+  width: 100%;
 }
 
 .plugin-card {
-  min-width: 0;
+  width: 100%;
+  max-width: 320px; /* Keeps the card at a good size */
   display: flex;
   flex-direction: column;
   padding: 19px;
@@ -411,7 +414,7 @@ h1 {
 .benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 26px;
+  margin-top: 40px;
   padding: 20px 8px;
   border: 1px solid #35213a;
   border-radius: 13px;
@@ -528,11 +531,6 @@ footer {
 
 /* RESPONSIVE */
 
-@media (max-width: 1000px) {
-  .plugin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero { min-height: 560px; }
-}
-
 @media (max-width: 650px) {
   .navbar { padding: 12px; }
   .logo { font-size: 17px; }
@@ -543,8 +541,7 @@ footer {
   .hero-description { font-size: 13px; }
   .features { gap: 16px; }
   .category-grid { grid-template-columns: 1fr; }
-  .plugin-grid { grid-template-columns: 1fr; }
-  .plugin-card { padding: 22px; }
+  .plugin-card { padding: 22px; max-width: 100%; }
   .benefits { grid-template-columns: repeat(2, 1fr); }
   .benefit:nth-child(2) { border-right: none; }
   .benefit:nth-child(-n+2) { border-bottom: 1px solid #34213a; padding-bottom: 14px; }
@@ -644,100 +641,29 @@ footer {
 
     <div class="plugin-grid">
 
+      <!-- EnderChest Plugin Card -->
       <article class="plugin-card">
         <div class="plugin-top">
-          <div class="plugin-icon">🍒</div>
+          <div class="plugin-icon">🟪</div>
           <div>
-            <h3>CherryCore</h3>
-            <p class="plugin-tagline">The heart of your server.</p>
+            <h3>EnderChest</h3>
+            <p class="plugin-tagline">Portable storage made easy.</p>
           </div>
         </div>
         <p class="plugin-description">
-          A utility plugin providing essential features, performance
-          improvements, and a smooth server experience.
+          Access your ender chest anywhere with a simple command. 
+          Perfect for quick storage on the go without carrying an actual block.
         </p>
         <div class="tags">
           <span class="tag">Utility</span>
-          <span class="tag">Performance</span>
-          <span class="tag">Essentials</span>
-        </div>
-        <div class="plugin-meta">
-          <span>▣ v1.2.0</span>
-          <span>◷ 1.21+</span>
-        </div>
-        <a class="button download" href="downloads/cherrycore.jar" download>↓ &nbsp; Download</a>
-      </article>
-
-      <article class="plugin-card">
-        <div class="plugin-top">
-          <div class="plugin-icon">⚔️</div>
-          <div>
-            <h3>PvPManager</h3>
-            <p class="plugin-tagline">Balanced. Fair. Fun.</p>
-          </div>
-        </div>
-        <p class="plugin-description">
-          Manage your PvP experience with custom kits, cooldowns,
-          and more. Perfect for survival and minigames!
-        </p>
-        <div class="tags">
-          <span class="tag">PvP</span>
-          <span class="tag">Kits</span>
-          <span class="tag">Cooldowns</span>
+          <span class="tag">Storage</span>
+          <span class="tag">Command</span>
         </div>
         <div class="plugin-meta">
           <span>▣ v1.0.0</span>
           <span>◷ 1.21+</span>
         </div>
-        <a class="button download" href="downloads/pvpmanager.jar" download>↓ &nbsp; Download</a>
-      </article>
-
-      <article class="plugin-card">
-        <div class="plugin-top">
-          <div class="plugin-icon">🟩</div>
-          <div>
-            <h3>LandClaim</h3>
-            <p class="plugin-tagline">Protect what's yours.</p>
-          </div>
-        </div>
-        <p class="plugin-description">
-          Allow players to claim land, set permissions, and keep
-          their builds safe from griefers. Simple and effective.
-        </p>
-        <div class="tags">
-          <span class="tag">Land</span>
-          <span class="tag">Protection</span>
-          <span class="tag">Permissions</span>
-        </div>
-        <div class="plugin-meta">
-          <span>▣ v1.1.0</span>
-          <span>◷ 1.21+</span>
-        </div>
-        <a class="button download" href="downloads/landclaim.jar" download>↓ &nbsp; Download</a>
-      </article>
-
-      <article class="plugin-card">
-        <div class="plugin-top">
-          <div class="plugin-icon">📦</div>
-          <div>
-            <h3>ShopPlugin</h3>
-            <p class="plugin-tagline">Player shops made easy.</p>
-          </div>
-        </div>
-        <p class="plugin-description">
-          Create custom shops, set prices, manage inventories,
-          and let your players trade with ease.
-        </p>
-        <div class="tags">
-          <span class="tag">Economy</span>
-          <span class="tag">Shops</span>
-          <span class="tag">Trading</span>
-        </div>
-        <div class="plugin-meta">
-          <span>▣ v1.3.0</span>
-          <span>◷ 1.21+</span>
-        </div>
-        <a class="button download" href="downloads/shopplugin.jar" download>↓ &nbsp; Download</a>
+        <a class="button download" href="downloads/enderchest.jar" download>↓ &nbsp; Download</a>
       </article>
 
     </div>
