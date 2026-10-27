@@ -330,14 +330,14 @@ h1 {
   color: var(--muted);
 }
 
-/* NEW PAPER ONLY ALERT */
+/* PAPER ONLY ALERT */
 .paper-alert {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 193, 7, 0.1); /* Subtle gold background */
+  background: rgba(255, 193, 7, 0.1);
   border: 1px solid rgba(255, 193, 7, 0.3);
-  color: #ffca28; /* Gold text */
+  color: #ffca28; 
   padding: 12px 20px;
   border-radius: 10px;
   font-size: 14px;
@@ -536,9 +536,9 @@ h1 {
 .donation-callout {
   margin-top: 40px;
   padding: 30px 20px;
-  border: 1px solid #ff39874d; /* Semi-transparent pink border */
+  border: 1px solid #ff39874d;
   border-radius: 16px;
-  background: linear-gradient(145deg, #ff39870a, #ff398714); /* Subtle pink background */
+  background: linear-gradient(145deg, #ff39870a, #ff398714);
   text-align: center;
   box-shadow: 0 5px 25px rgba(255, 57, 135, 0.05);
 }
@@ -704,7 +704,8 @@ footer {
     <a onclick="showView('about')">♙ About</a>
     <a onclick="showView('support')">✉ Support</a>
   </div>
-  <a onclick="showView('home')" class="button">🍒 Download Now</a>
+  <!-- CHANGED: Added onclick to scroll down to the directory -->
+  <a onclick="scrollToDownload()" class="button" style="cursor: pointer;">🍒 Download Now</a>
 </nav>
 
 <!-- HOME VIEW -->
@@ -742,7 +743,8 @@ footer {
   </header>
 
   <main>
-    <section class="directory-section">
+    <!-- ADDED ID HERE TO SCROLL TO IT -->
+    <section class="directory-section" id="download-section">
       <div class="container">
         <div class="section-header" style="margin-left: 0; text-align: center;">
           <div class="section-label">🍒 &nbsp; EXPLORE DOWNLOADS</div>
@@ -783,7 +785,7 @@ footer {
       <p>Explore our collection of high-quality plugins. Click download to get started!</p>
     </div>
 
-    <!-- NEW PAPER ONLY ALERT -->
+    <!-- PAPER ONLY ALERT -->
     <div class="paper-alert">
       <span class="paper-alert-icon">📄</span>
       <span>Note: All plugins as of right now are <strong>Paper only</strong>.</span>
@@ -980,6 +982,18 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// NEW FUNCTION: Scrolls to the download section on the home page
+function scrollToDownload() {
+  // First make sure we are on the home view
+  showView('home');
+  
+  // Then scroll down to the directory section
+  const downloadSection = document.getElementById('download-section');
+  if (downloadSection) {
+    downloadSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Universal copy function for all buttons
