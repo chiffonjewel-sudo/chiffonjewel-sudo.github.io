@@ -480,8 +480,22 @@ h1 {
   color: #c6b9ce;
   font-size: 12px;
   line-height: 1.65;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   flex: 1;
+}
+
+/* NEW: Update note style */
+.update-note {
+  display: block;
+  font-size: 10px;
+  color: var(--pink2);
+  font-weight: 600;
+  margin-bottom: 15px;
+  background: rgba(255, 57, 135, 0.1);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 57, 135, 0.2);
+  text-align: center;
 }
 
 .tags {
@@ -824,14 +838,14 @@ footer {
           
           <!-- UPDATE POST 1: Copy and paste this block to add more! -->
           <li class="news-item">
-            <span class="news-date">Oct 27, 2026</span>
-            <p>Website launched! EnderChest v1.2.0 is now available for download. Go check it out!</p>
+            <span class="news-date">Just Now</span>
+            <p>StaffCore v1.0.0 is officially released and ready for download! Go check it out.</p>
           </li>
           
           <!-- UPDATE POST 2 -->
           <li class="news-item">
-            <span class="news-date">Coming Soon</span>
-            <p>Working on a new custom plugin to help manage server performance. Stay tuned!</p>
+            <span class="news-date">Oct 27, 2026</span>
+            <p>Website launched! EnderChest v1.2.0 is now available for download.</p>
           </li>
 
         </ul>
@@ -931,6 +945,10 @@ footer {
         <p class="plugin-description">
           A complete suite for server admins. Features essential staff commands like ban, mute, and vcmute, plus built-in tools to catch cheaters and keep your server safe.
         </p>
+        
+        <!-- NEW UPDATE NOTE -->
+        <span class="update-note">Will receive more updates as I think of new features!</span>
+
         <div class="tags">
           <span class="tag">Admin</span>
           <span class="tag">Anti-Cheat</span>
