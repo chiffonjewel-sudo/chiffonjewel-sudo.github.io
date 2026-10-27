@@ -96,7 +96,7 @@ a { color: inherit; text-decoration: none; }
 
 .button-outline { background: #0d0812d9; }
 
-/* HERO BACKGROUND */
+/* HERO BACKGROUND & LAYOUT */
 
 .hero {
   min-height: 535px;
@@ -119,11 +119,74 @@ a { color: inherit; text-decoration: none; }
   background-size: cover;
 }
 
-.hero-content {
-  max-width: 670px;
+/* NEW: Flex container to split Hero text and News box */
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
   position: relative;
   z-index: 1;
 }
+
+.hero-content {
+  flex: 1;
+  max-width: 670px;
+}
+
+/* NEW: News Box Styles */
+.news-box {
+  width: 340px;
+  background: rgba(19, 12, 23, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid #593049;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  flex-shrink: 0;
+}
+
+.news-box h3 {
+  font-size: 16px;
+  color: var(--pink2);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-item {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3d273f;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.news-date {
+  font-size: 11px;
+  color: var(--pink);
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.news-item p {
+  font-size: 13px;
+  color: #d4c9dc;
+  line-height: 1.5;
+}
+
+/* THE REST OF THE HERO TEXT */
 
 .eyebrow {
   display: inline-block;
@@ -672,6 +735,18 @@ footer {
 
 /* RESPONSIVE */
 
+@media (max-width: 1000px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .news-box {
+    width: 100%;
+    max-width: 670px;
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 650px) {
   .navbar { padding: 12px; }
   .logo { font-size: 17px; }
@@ -704,14 +779,15 @@ footer {
     <a onclick="showView('about')">♙ About</a>
     <a onclick="showView('support')">✉ Support</a>
   </div>
-  <!-- CHANGED: Added onclick to scroll down to the directory -->
   <a onclick="scrollToDownload()" class="button" style="cursor: pointer;">🍒 Download Now</a>
 </nav>
 
 <!-- HOME VIEW -->
 <div id="home-view">
   <header class="hero" id="home">
-    <div class="container">
+    <div class="container hero-container">
+      
+      <!-- Left Side: Hero Text -->
       <div class="hero-content">
         <div class="eyebrow">✦ &nbsp; CUSTOM MINECRAFT PLUGINS</div>
         <h1><span class="gradient">Cherry</span> Plugins 🍒</h1>
@@ -739,6 +815,27 @@ footer {
           <a onclick="showView('about')" class="button button-outline">ⓘ &nbsp; Learn More</a>
         </div>
       </div>
+
+      <!-- Right Side: News Box -->
+      <div class="news-box">
+        <h3>📢 Latest Updates</h3>
+        <ul class="news-list">
+          
+          <!-- UPDATE POST 1: Copy and paste this block to add more! -->
+          <li class="news-item">
+            <span class="news-date">Oct 27, 2026</span>
+            <p>Website launched! EnderChest v1.2.0 is now available for download. Go check it out!</p>
+          </li>
+          
+          <!-- UPDATE POST 2: (Example of another update) -->
+          <li class="news-item">
+            <span class="news-date">Coming Soon</span>
+            <p>Working on a new custom plugin to help manage server performance. Stay tuned!</p>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
   </header>
 
