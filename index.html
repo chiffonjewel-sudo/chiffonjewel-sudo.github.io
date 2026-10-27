@@ -235,9 +235,35 @@ h1 {
   box-shadow: 0 10px 35px #ff398712;
 }
 
-.category-icon {
-  font-size: 60px;
+/* CSS MINECRAFT DIRT BLOCK */
+.css-dirt-block {
+  width: 64px;
+  height: 64px;
   margin-bottom: 15px;
+  background-color: #79553A;
+  /* Replicating the Minecraft dirt texture with layered gradients */
+  background-image: 
+    radial-gradient(circle at 20% 30%, #593D29 15%, transparent 20%),
+    radial-gradient(circle at 80% 20%, #916B4B 20%, transparent 25%),
+    radial-gradient(circle at 40% 70%, #4A311F 18%, transparent 22%),
+    radial-gradient(circle at 75% 80%, #593D29 25%, transparent 30%),
+    radial-gradient(circle at 10% 90%, #916B4B 15%, transparent 20%),
+    radial-gradient(circle at 90% 60%, #593D29 15%, transparent 20%),
+    linear-gradient(135deg, #79553A 0%, #593D29 100%);
+  background-size: 20px 20px, 25px 25px, 18px 18px, 22px 22px, 16px 16px, 24px 24px, 100% 100%;
+  background-position: 0 0, 10px 10px, 5px 5px, 15px 15px, 8px 8px, 2px 2px, center;
+  border-radius: 4px; /* Slight rounded corners so it matches the UI */
+  box-shadow: 
+    inset -4px -4px 0 rgba(0, 0, 0, 0.4), /* Bottom right shadow */
+    inset 4px 4px 0 rgba(255, 255, 255, 0.1), /* Top left highlight */
+    0 8px 16px rgba(0, 0, 0, 0.4); /* Outer drop shadow */
+  border: 2px solid #4A311F; /* Subtle outline to make it pop */
+  image-rendering: pixelated;
+  transition: transform 0.2s;
+}
+
+.category-card:hover .css-dirt-block {
+  transform: translateY(-3px) scale(1.05);
 }
 
 .category-card h3 {
@@ -261,6 +287,11 @@ h1 {
   transform: none;
   border-color: #3d273f;
   box-shadow: none;
+}
+
+.category-icon-emoji {
+  font-size: 60px;
+  margin-bottom: 15px;
 }
 
 /* PLUGINS SECTION (HIDDEN BY DEFAULT) */
@@ -611,14 +642,14 @@ footer {
         <div class="category-grid">
           <!-- Minecraft Plugins Category -->
           <div class="category-card" onclick="showView('plugins')">
-            <div class="category-icon">🟩</div>
+            <div class="css-dirt-block"></div>
             <h3>Minecraft Plugins</h3>
             <p>Browse my custom-coded plugins for your Minecraft server.</p>
           </div>
 
           <!-- Coming Soon Category -->
           <div class="category-card coming-soon">
-            <div class="category-icon">📦</div>
+            <div class="category-icon-emoji">📦</div>
             <h3>Other Stuff</h3>
             <p>More resources, mods, and tools coming in the future!</p>
           </div>
