@@ -238,15 +238,18 @@ h1 {
 /* CSS MINECRAFT GRASS BLOCK (PIXEL ART) */
 
 .pixel-art-wrapper {
-  width: 128px;
+  /* FIXED: Explicitly defined dimensions so the box-shadow doesn't collapse */
+  width: 128px; 
   height: 128px;
-  margin-bottom: 25px;
-  position: relative; /* Ensures the absolute block stays inside */
+  margin-bottom: 20px;
+  position: relative;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transition: transform 0.2s ease;
+  /* Added a drop shadow to make the block pop slightly */
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5)); 
 }
 
 .category-card:hover .pixel-art-wrapper {
@@ -254,16 +257,15 @@ h1 {
 }
 
 .mc-block {
-  width: 8px; /* Base pixel size */
+  width: 8px; 
   height: 8px;
-  background: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -4px; /* Perfectly center the drawing */
+  margin-top: -4px; 
   margin-left: -4px;
   
-  /* 16x16 grid of box shadows to recreate the grass block texture */
+  /* 16x16 grid of box shadows to recreate the grass block */
   box-shadow:
     /* Row 1: Grass */
     0px 0px 0 #79C05A, 8px 0px 0 #79C05A, 16px 0px 0 #6CAE4C, 24px 0px 0 #79C05A, 32px 0px 0 #8DCD66, 40px 0px 0 #8DCD66, 48px 0px 0 #79C05A, 56px 0px 0 #6CAE4C, 64px 0px 0 #79C05A, 72px 0px 0 #79C05A, 80px 0px 0 #8DCD66, 88px 0px 0 #8DCD66, 96px 0px 0 #6CAE4C, 104px 0px 0 #79C05A, 112px 0px 0 #79C05A, 120px 0px 0 #6CAE4C,
