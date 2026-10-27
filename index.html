@@ -948,7 +948,6 @@ footer {
         <!-- UPDATE NOTE -->
         <span class="update-note">Will receive more updates as I think of new features!</span>
 
-        <!-- UPDATED TAGS HERE (Removed Anti-Cheat) -->
         <div class="tags">
           <span class="tag">Admin</span>
           <span class="tag">Cheater Alerts</span>
@@ -1124,6 +1123,18 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// RE-ADDED: Scrolls to the download section on the home page
+function scrollToDownload() {
+  // First make sure we are on the home view
+  showView('home');
+  
+  // Then scroll down to the directory section
+  const downloadSection = document.getElementById('download-section');
+  if (downloadSection) {
+    downloadSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Universal copy function for all buttons
