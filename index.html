@@ -550,6 +550,7 @@ h1 {
   cursor: pointer;
   transition: .2s;
   border: 1px solid;
+  font-family: inherit;
 }
 
 .donate-btn:hover {
@@ -835,8 +836,7 @@ footer {
       </p>
       
       <div class="support-actions">
-        <!-- Changed to a button with an onclick event to copy text -->
-        <button class="button" id="copy-email-btn" onclick="copyEmail()" style="font-size: 15px; padding: 15px 30px; border: 1px solid var(--pink);">
+        <button class="button" id="copy-email-btn" onclick="copyText('chiffon.work.support@gmail.com', 'copy-email-btn', '✉ chiffon.work.support@gmail.com')" style="font-size: 15px; padding: 15px 30px; border: 1px solid var(--pink);">
           ✉ chiffon.work.support@gmail.com
         </button>
       </div>
@@ -845,7 +845,7 @@ footer {
         <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
       </div>
 
-      <!-- NEW DONATION SECTION -->
+      <!-- DONATION SECTION -->
       <div class="donation-section">
         <h3>Support My Work ❤️</h3>
         <p>
@@ -854,15 +854,17 @@ footer {
         </p>
         
         <div class="donation-buttons">
-          <!-- Replace the href links below with your actual wallet or payment links -->
-          <a href="bitcoin:YOUR_BTC_ADDRESS_HERE" class="donate-btn btn-btc" target="_blank">
+          <!-- BTC Button -->
+          <button class="donate-btn btn-btc" id="copy-btc-btn" onclick="copyText('bc1qdunetg2hjs5axa3wnq8jdmmg7t0hqxtxd4nlvk', 'copy-btc-btn', '₿ Bitcoin (BTC)')">
             ₿ Bitcoin (BTC)
-          </a>
+          </button>
           
-          <a href="solana:YOUR_SOL_ADDRESS_HERE" class="donate-btn btn-sol" target="_blank">
+          <!-- SOL Button -->
+          <button class="donate-btn btn-sol" id="copy-sol-btn" onclick="copyText('HchcxiKmjPtrawfVqWeMNyxbxPcnn9ScDFQYfZM8bs4S', 'copy-sol-btn', '◎ Solana (SOL)')">
             ◎ Solana (SOL)
-          </a>
+          </button>
           
+          <!-- PayPal Link (Update this link to your actual PayPal) -->
           <a href="https://paypal.me/YOUR_PAYPAL_LINK" class="donate-btn btn-paypal" target="_blank">
             💳 PayPal
           </a>
@@ -919,23 +921,18 @@ function showView(viewName) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Function to copy email to clipboard
-function copyEmail() {
-  const email = "chiffon.work.support@gmail.com";
-  const btn = document.getElementById("copy-email-btn");
-  
-  // Copy text
-  navigator.clipboard.writeText(email).then(() => {
-    // Change button text temporarily to show it worked
-    const originalText = btn.innerHTML;
-    btn.innerHTML = "✔ Copied to Clipboard!";
+// Universal copy function for all buttons
+function copyText(textToCopy, buttonId, originalHTML) {
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    const btn = document.getElementById(buttonId);
+    btn.innerHTML = "✔ Copied!";
     
     // Change back to normal after 2 seconds
     setTimeout(() => {
-      btn.innerHTML = originalText;
+      btn.innerHTML = originalHTML;
     }, 2000);
   }).catch(err => {
-    alert("Failed to copy email. Please copy it manually: " + email);
+    alert("Failed to copy! Please copy it manually.");
   });
 }
 </script>
