@@ -235,70 +235,10 @@ h1 {
   box-shadow: 0 10px 35px #ff398712;
 }
 
-/* CSS MINECRAFT GRASS BLOCK (PIXEL ART) */
-
-.pixel-art-wrapper {
-  /* FIXED: Explicitly defined dimensions so the box-shadow doesn't collapse */
-  width: 128px; 
-  height: 128px;
-  margin-bottom: 20px;
-  position: relative;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  transition: transform 0.2s ease;
-  /* Added a drop shadow to make the block pop slightly */
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5)); 
-}
-
-.category-card:hover .pixel-art-wrapper {
-  transform: translateY(-4px) scale(1.05);
-}
-
-.mc-block {
-  width: 8px; 
-  height: 8px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -4px; 
-  margin-left: -4px;
-  
-  /* 16x16 grid of box shadows to recreate the grass block */
-  box-shadow:
-    /* Row 1: Grass */
-    0px 0px 0 #79C05A, 8px 0px 0 #79C05A, 16px 0px 0 #6CAE4C, 24px 0px 0 #79C05A, 32px 0px 0 #8DCD66, 40px 0px 0 #8DCD66, 48px 0px 0 #79C05A, 56px 0px 0 #6CAE4C, 64px 0px 0 #79C05A, 72px 0px 0 #79C05A, 80px 0px 0 #8DCD66, 88px 0px 0 #8DCD66, 96px 0px 0 #6CAE4C, 104px 0px 0 #79C05A, 112px 0px 0 #79C05A, 120px 0px 0 #6CAE4C,
-    /* Row 2: Grass */
-    0px 8px 0 #79C05A, 8px 8px 0 #8DCD66, 16px 8px 0 #8DCD66, 24px 8px 0 #79C05A, 32px 8px 0 #79C05A, 40px 8px 0 #6CAE4C, 48px 8px 0 #79C05A, 56px 8px 0 #79C05A, 64px 8px 0 #8DCD66, 72px 8px 0 #8DCD66, 80px 8px 0 #79C05A, 88px 8px 0 #6CAE4C, 96px 8px 0 #79C05A, 104px 8px 0 #79C05A, 112px 8px 0 #8DCD66, 120px 8px 0 #79C05A,
-    /* Row 3: Grass */
-    0px 16px 0 #6CAE4C, 8px 16px 0 #79C05A, 16px 16px 0 #79C05A, 24px 16px 0 #79C05A, 32px 16px 0 #8DCD66, 40px 16px 0 #79C05A, 48px 16px 0 #79C05A, 56px 16px 0 #6CAE4C, 64px 16px 0 #79C05A, 72px 16px 0 #79C05A, 80px 16px 0 #8DCD66, 88px 16px 0 #79C05A, 96px 16px 0 #79C05A, 104px 16px 0 #6CAE4C, 112px 16px 0 #79C05A, 120px 16px 0 #79C05A,
-    /* Row 4: Dirt */
-    0px 24px 0 #79553A, 8px 24px 0 #4A311F, 16px 24px 0 #5C3E26, 24px 24px 0 #79553A, 32px 24px 0 #916B4B, 40px 24px 0 #5C3E26, 48px 24px 0 #79553A, 56px 24px 0 #4A311F, 64px 24px 0 #5C3E26, 72px 24px 0 #79553A, 80px 24px 0 #916B4B, 88px 24px 0 #5C3E26, 96px 24px 0 #79553A, 104px 24px 0 #4A311F, 112px 24px 0 #5C3E26, 120px 24px 0 #79553A,
-    /* Row 5: Dirt */
-    0px 32px 0 #5C3E26, 8px 32px 0 #79553A, 16px 32px 0 #79553A, 24px 32px 0 #4A311F, 32px 32px 0 #5C3E26, 40px 32px 0 #79553A, 48px 32px 0 #916B4B, 56px 32px 0 #5C3E26, 64px 32px 0 #79553A, 72px 32px 0 #4A311F, 80px 32px 0 #5C3E26, 88px 32px 0 #79553A, 96px 32px 0 #916B4B, 104px 32px 0 #5C3E26, 112px 32px 0 #79553A, 120px 32px 0 #4A311F,
-    /* Row 6: Dirt (with stone pebbles) */
-    0px 40px 0 #916B4B, 8px 40px 0 #5C3E26, 16px 40px 0 #79553A, 24px 40px 0 #79553A, 32px 40px 0 #4A311F, 40px 40px 0 #5C3E26, 48px 40px 0 #79553A, 56px 40px 0 #7F8588, 64px 40px 0 #79553A, 72px 40px 0 #79553A, 80px 40px 0 #4A311F, 88px 40px 0 #5C3E26, 96px 40px 0 #79553A, 104px 40px 0 #916B4B, 112px 40px 0 #5C3E26, 120px 40px 0 #79553A,
-    /* Row 7: Dirt */
-    0px 48px 0 #79553A, 8px 48px 0 #4A311F, 16px 48px 0 #5C3E26, 24px 48px 0 #79553A, 32px 48px 0 #916B4B, 40px 48px 0 #5C3E26, 48px 48px 0 #79553A, 56px 48px 0 #4A311F, 64px 48px 0 #5C3E26, 72px 48px 0 #79553A, 80px 48px 0 #916B4B, 88px 48px 0 #5C3E26, 96px 48px 0 #79553A, 104px 48px 0 #4A311F, 112px 48px 0 #5C3E26, 120px 48px 0 #79553A,
-    /* Row 8: Dirt */
-    0px 56px 0 #5C3E26, 8px 56px 0 #79553A, 16px 56px 0 #79553A, 24px 56px 0 #4A311F, 32px 56px 0 #5C3E26, 40px 56px 0 #79553A, 48px 56px 0 #916B4B, 56px 56px 0 #5C3E26, 64px 56px 0 #79553A, 72px 56px 0 #4A311F, 80px 56px 0 #5C3E26, 88px 56px 0 #79553A, 96px 56px 0 #916B4B, 104px 56px 0 #5C3E26, 112px 56px 0 #79553A, 120px 56px 0 #4A311F,
-    /* Row 9: Dirt */
-    0px 64px 0 #79553A, 8px 64px 0 #4A311F, 16px 64px 0 #5C3E26, 24px 64px 0 #79553A, 32px 64px 0 #916B4B, 40px 64px 0 #5C3E26, 48px 64px 0 #79553A, 56px 64px 0 #4A311F, 64px 64px 0 #5C3E26, 72px 64px 0 #79553A, 80px 64px 0 #916B4B, 88px 64px 0 #5C3E26, 96px 64px 0 #79553A, 104px 64px 0 #4A311F, 112px 64px 0 #5C3E26, 120px 64px 0 #79553A,
-    /* Row 10: Dirt */
-    0px 72px 0 #5C3E26, 8px 72px 0 #79553A, 16px 72px 0 #79553A, 24px 72px 0 #4A311F, 32px 72px 0 #5C3E26, 40px 72px 0 #79553A, 48px 72px 0 #916B4B, 56px 72px 0 #5C3E26, 64px 72px 0 #79553A, 72px 72px 0 #4A311F, 80px 72px 0 #5C3E26, 88px 72px 0 #79553A, 96px 72px 0 #916B4B, 104px 72px 0 #5C3E26, 112px 72px 0 #79553A, 120px 72px 0 #4A311F,
-    /* Row 11: Dirt (with stone pebbles) */
-    0px 80px 0 #79553A, 8px 80px 0 #4A311F, 16px 80px 0 #5C3E26, 24px 80px 0 #79553A, 32px 80px 0 #7F8588, 40px 80px 0 #5C3E26, 48px 80px 0 #79553A, 56px 80px 0 #4A311F, 64px 80px 0 #5C3E26, 72px 80px 0 #79553A, 80px 80px 0 #916B4B, 88px 80px 0 #5C3E26, 96px 80px 0 #79553A, 104px 80px 0 #4A311F, 112px 80px 0 #5C3E26, 120px 80px 0 #79553A,
-    /* Row 12: Dirt */
-    0px 88px 0 #5C3E26, 8px 88px 0 #79553A, 16px 88px 0 #79553A, 24px 88px 0 #4A311F, 32px 88px 0 #5C3E26, 40px 88px 0 #79553A, 48px 88px 0 #916B4B, 56px 88px 0 #5C3E26, 64px 88px 0 #79553A, 72px 88px 0 #4A311F, 80px 88px 0 #5C3E26, 88px 88px 0 #79553A, 96px 88px 0 #916B4B, 104px 88px 0 #5C3E26, 112px 88px 0 #79553A, 120px 88px 0 #4A311F,
-    /* Row 13: Dirt */
-    0px 96px 0 #79553A, 8px 96px 0 #4A311F, 16px 96px 0 #5C3E26, 24px 96px 0 #79553A, 32px 96px 0 #916B4B, 40px 96px 0 #5C3E26, 48px 96px 0 #79553A, 56px 96px 0 #4A311F, 64px 96px 0 #5C3E26, 72px 96px 0 #79553A, 80px 96px 0 #916B4B, 88px 96px 0 #5C3E26, 96px 96px 0 #79553A, 104px 96px 0 #4A311F, 112px 96px 0 #5C3E26, 120px 96px 0 #79553A,
-    /* Row 14: Dirt */
-    0px 104px 0 #5C3E26, 8px 104px 0 #79553A, 16px 104px 0 #79553A, 24px 104px 0 #4A311F, 32px 104px 0 #5C3E26, 40px 104px 0 #79553A, 48px 104px 0 #916B4B, 56px 104px 0 #5C3E26, 64px 104px 0 #79553A, 72px 104px 0 #4A311F, 80px 104px 0 #5C3E26, 88px 104px 0 #79553A, 96px 104px 0 #916B4B, 104px 104px 0 #5C3E26, 112px 104px 0 #79553A, 120px 104px 0 #4A311F,
-    /* Row 15: Dirt (with stone pebble) */
-    0px 112px 0 #79553A, 8px 112px 0 #4A311F, 16px 112px 0 #5C3E26, 24px 112px 0 #79553A, 32px 112px 0 #916B4B, 40px 112px 0 #5C3E26, 48px 112px 0 #79553A, 56px 112px 0 #4A311F, 64px 112px 0 #5C3E26, 72px 112px 0 #79553A, 80px 112px 0 #7F8588, 88px 112px 0 #5C3E26, 96px 112px 0 #79553A, 104px 112px 0 #4A311F, 112px 112px 0 #5C3E26, 120px 112px 0 #79553A,
-    /* Row 16: Dirt */
-    0px 120px 0 #5C3E26, 8px 120px 0 #79553A, 16px 120px 0 #79553A, 24px 120px 0 #4A311F, 32px 120px 0 #5C3E26, 40px 120px 0 #79553A, 48px 120px 0 #916B4B, 56px 120px 0 #5C3E26, 64px 120px 0 #79553A, 72px 120px 0 #4A311F, 80px 120px 0 #5C3E26, 88px 120px 0 #79553A, 96px 120px 0 #916B4B, 104px 120px 0 #5C3E26, 112px 120px 0 #79553A, 120px 120px 0 #4A311F;
+.category-icon-emoji {
+  font-size: 60px;
+  margin-bottom: 15px;
+  line-height: 1;
 }
 
 .category-card h3 {
@@ -322,11 +262,6 @@ h1 {
   transform: none;
   border-color: #3d273f;
   box-shadow: none;
-}
-
-.category-icon-emoji {
-  font-size: 60px;
-  margin-bottom: 15px;
 }
 
 /* PLUGINS SECTION (HIDDEN BY DEFAULT) */
@@ -677,9 +612,7 @@ footer {
         <div class="category-grid">
           <!-- Minecraft Plugins Category -->
           <div class="category-card" onclick="showView('plugins')">
-            <div class="pixel-art-wrapper">
-              <div class="mc-block"></div>
-            </div>
+            <div class="category-icon-emoji">⛏️</div>
             <h3>Minecraft Plugins</h3>
             <p>Browse my custom-coded plugins for your Minecraft server.</p>
           </div>
