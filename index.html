@@ -56,6 +56,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 23px;
   font-weight: 800;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .logo span { color: var(--pink); }
@@ -67,6 +68,7 @@ a { color: inherit; text-decoration: none; }
   color: #e7dce9;
 }
 
+.navlinks a { cursor: pointer; }
 .navlinks a:hover { color: var(--pink2); }
 
 .button {
@@ -104,7 +106,6 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--pink);
   background-color: #14091b;
 
-  /* Put cherry-minecraft.jpg beside this HTML file */
   background-image:
     linear-gradient(90deg,
       rgba(9,5,14,.97) 0%,
@@ -198,14 +199,100 @@ h1 {
   gap: 13px;
 }
 
-/* PLUGIN SECTION */
+/* DIRECTORY / CATEGORIES SECTION (HOME) */
 
-.plugins-section {
-  position: relative;
-  padding: 35px 0 32px;
+.directory-section {
+  padding: 50px 0 60px;
   background:
     radial-gradient(ellipse at 50% 0%, #39102c30, transparent 65%),
     #0b0710;
+  min-height: 50vh;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 25px;
+  border: 1px solid #3d273f;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #160d19, #100a13);
+  cursor: pointer;
+  transition: .25s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pink);
+  box-shadow: 0 10px 35px #ff398712;
+}
+
+.category-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.category-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.category-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.category-card.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+.category-card.coming-soon:hover {
+  transform: none;
+  border-color: #3d273f;
+  box-shadow: none;
+}
+
+/* PLUGINS SECTION (HIDDEN BY DEFAULT) */
+
+.plugins-section {
+  display: none;
+  padding: 120px 0 50px;
+  min-height: 80vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #39102c30, transparent 65%),
+    #0b0710;
+}
+
+.plugins-section.active {
+  display: block;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pink2);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.back-btn:hover {
+  color: var(--pink);
+  transform: translateX(-3px);
 }
 
 .section-header { margin: 0 0 22px 10px; }
@@ -408,7 +495,7 @@ footer {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
   align-items: center;
 }
@@ -426,36 +513,8 @@ footer {
   font-size: 11px;
 }
 
+.footer-links a { cursor: pointer; }
 .footer-links a:hover { color: var(--pink); }
-
-.footer-main h3 {
-  color: var(--pink2);
-  font-size: 13px;
-}
-
-.subscribe {
-  display: flex;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.subscribe input {
-  width: 100%;
-  min-width: 0;
-  padding: 11px;
-  border: 1px solid #5a2a48;
-  border-radius: 9px;
-  background: #0b0710;
-  color: white;
-  outline: none;
-}
-
-.subscribe input:focus { border-color: var(--pink); }
-
-.subscribe .button {
-  padding: 10px 13px;
-  font-size: 11px;
-}
 
 .copyright {
   text-align: center;
@@ -482,6 +541,7 @@ footer {
   .hero { padding-top: 140px; min-height: 600px; }
   .hero-description { font-size: 13px; }
   .features { gap: 16px; }
+  .category-grid { grid-template-columns: 1fr; }
   .plugin-grid { grid-template-columns: 1fr; }
   .plugin-card { padding: 22px; }
   .benefits { grid-template-columns: repeat(2, 1fr); }
@@ -496,60 +556,88 @@ footer {
 <body>
 
 <nav class="navbar">
-  <a href="#home" class="logo" onclick="showHome()">🍒 <span>Cherry</span> Plugins</a>
+  <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
   <div class="navlinks">
-    <a href="#home" onclick="showHome()">⌂ Home</a>
-    <a href="#plugins" onclick="showHome()">◇ Plugins</a>
-    <a href="#about" onclick="showAbout()">♙ About</a>
+    <a onclick="showView('home')">⌂ Home</a>
+    <a onclick="showView('plugins')">◇ Plugins</a>
+    <a onclick="showView('about')">♙ About</a>
   </div>
-  <a href="#plugins" class="button" onclick="showHome()">🍒 Download Now</a>
+  <a onclick="showView('home')" class="button">🍒 Download Now</a>
 </nav>
 
-<!-- HOME / MAIN CONTENT -->
+<!-- HOME VIEW -->
 <div id="home-view">
-<header class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-      <div class="eyebrow">✦ &nbsp; CUSTOM MINECRAFT PLUGINS</div>
-
-      <h1><span class="gradient">Cherry</span> Plugins 🍒</h1>
-
-      <h2>Better servers. <span>Happier players.</span></h2>
-
-      <p class="hero-description">
-        High-quality, easy-to-use Minecraft plugins made with love.
-        Simple installation, great support, and regular updates.
-      </p>
-
-      <div class="features">
-        <div class="feature">
-          <span class="feature-icon">♧</span>
-          <div><strong>Reliable &amp; Safe</strong><small>Tested and trusted</small></div>
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">✦ &nbsp; CUSTOM MINECRAFT PLUGINS</div>
+        <h1><span class="gradient">Cherry</span> Plugins 🍒</h1>
+        <h2>Better servers. <span>Happier players.</span></h2>
+        <p class="hero-description">
+          High-quality, easy-to-use Minecraft plugins made with love.
+          Simple installation, great support, and regular updates.
+        </p>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon">♧</span>
+            <div><strong>Reliable &amp; Safe</strong><small>Tested and trusted</small></div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">ϟ</span>
+            <div><strong>Easy Setup</strong><small>Get started in minutes</small></div>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">♡</span>
+            <div><strong>Made with Love</strong><small>By a Minecraft enthusiast</small></div>
+          </div>
         </div>
-        <div class="feature">
-          <span class="feature-icon">ϟ</span>
-          <div><strong>Easy Setup</strong><small>Get started in minutes</small></div>
+        <div class="hero-actions">
+          <a onclick="showView('plugins')" class="button">↓ &nbsp; Browse Plugins →</a>
+          <a onclick="showView('about')" class="button button-outline">ⓘ &nbsp; Learn More</a>
         </div>
-        <div class="feature">
-          <span class="feature-icon">♡</span>
-          <div><strong>Made with Love</strong><small>By a Minecraft enthusiast</small></div>
-        </div>
-      </div>
-
-      <div class="hero-actions">
-        <a href="#plugins" class="button">↓ &nbsp; Browse Plugins →</a>
-        <a href="#about" class="button button-outline" onclick="showAbout()">ⓘ &nbsp; Learn More</a>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="plugins-section" id="plugins">
+  <main>
+    <section class="directory-section">
+      <div class="container">
+        <div class="section-header" style="margin-left: 0; text-align: center;">
+          <div class="section-label">🍒 &nbsp; EXPLORE DOWNLOADS</div>
+          <h2>What are you looking <span class="gradient">for?</span></h2>
+          <p>Select a category below to view and download content.</p>
+        </div>
+
+        <div class="category-grid">
+          <!-- Minecraft Plugins Category -->
+          <div class="category-card" onclick="showView('plugins')">
+            <div class="category-icon">🟩</div>
+            <h3>Minecraft Plugins</h3>
+            <p>Browse my custom-coded plugins for your Minecraft server.</p>
+          </div>
+
+          <!-- Coming Soon Category -->
+          <div class="category-card coming-soon">
+            <div class="category-icon">📦</div>
+            <h3>Other Stuff</h3>
+            <p>More resources, mods, and tools coming in the future!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- PLUGINS VIEW (HIDDEN BY DEFAULT) -->
+<section class="plugins-section" id="plugins-view">
   <div class="container">
+    <div class="back-btn" onclick="showView('home')">
+      ← Back to Categories
+    </div>
+    
     <div class="section-header">
-      <div class="section-label">🍒 &nbsp; FEATURED PLUGINS</div>
-      <h2>Our <span class="gradient">Minecraft Plugins</span></h2>
+      <div class="section-label">🍒 &nbsp; MINECRAFT PLUGINS</div>
+      <h2>All <span class="gradient">Minecraft Plugins</span></h2>
       <p>Explore our collection of high-quality plugins. Click download to get started!</p>
     </div>
 
@@ -677,10 +765,8 @@ footer {
     </section>
   </div>
 </section>
-</main>
-</div>
 
-<!-- ABOUT SECTION (HIDDEN BY DEFAULT) -->
+<!-- ABOUT VIEW (HIDDEN BY DEFAULT) -->
 <section class="about-section" id="about-view">
   <div class="container">
     <div class="about-content">
@@ -697,8 +783,8 @@ footer {
         This is a growing project made with love for server owners and players alike.
       </p>
       <div class="about-actions">
-        <a href="#plugins" class="button" onclick="showHome()">🍒 Browse Plugins</a>
-        <a href="#home" class="button button-outline" onclick="showHome()">⌂ Back to Home</a>
+        <a onclick="showView('plugins')" class="button">🍒 Browse Plugins</a>
+        <a onclick="showView('home')" class="button button-outline">⌂ Back to Home</a>
       </div>
     </div>
   </div>
@@ -708,27 +794,16 @@ footer {
   <div class="container">
     <div class="footer-main">
       <div>
-        <a class="logo" href="#home" onclick="showHome()">🍒 <span>Cherry</span> Plugins</a>
-        <p>Small plugins. Big ideas.</p>
-      </div>
-
-      <div>
-        <div class="footer-links">
-          <a href="#home" onclick="showHome()">Home</a>
-          <a href="#plugins" onclick="showHome()">Plugins</a>
-          <a href="#about" onclick="showAbout()">About</a>
-        </div>
+        <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
         <p style="margin-top:15px">🍒 Made for Minecraft server owners.</p>
       </div>
 
       <div>
-        <h3>Stay Updated</h3>
-        <p>Get news about new plugins and updates!</p>
-        <form class="subscribe" id="subscribe-form">
-          <input type="email" placeholder="Your email address" required>
-          <button class="button" type="submit">Subscribe</button>
-        </form>
-        <p id="subscribe-message" aria-live="polite"></p>
+        <div class="footer-links">
+          <a onclick="showView('home')">Home</a>
+          <a onclick="showView('plugins')">Plugins</a>
+          <a onclick="showView('about')">About</a>
+        </div>
       </div>
     </div>
 
@@ -739,23 +814,24 @@ footer {
 </footer>
 
 <script>
-function showAbout() {
+function showView(viewName) {
+  // Hide all views
   document.getElementById('home-view').style.display = 'none';
-  document.getElementById('about-view').classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function showHome() {
+  document.getElementById('plugins-view').classList.remove('active');
   document.getElementById('about-view').classList.remove('active');
-  document.getElementById('home-view').style.display = 'block';
+  
+  // Show the selected view
+  if (viewName === 'home') {
+    document.getElementById('home-view').style.display = 'block';
+  } else if (viewName === 'plugins') {
+    document.getElementById('plugins-view').classList.add('active');
+  } else if (viewName === 'about') {
+    document.getElementById('about-view').classList.add('active');
+  }
+
+  // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-document.getElementById("subscribe-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-  document.getElementById("subscribe-message").textContent =
-    "Thanks! Email subscriptions need to be connected to a service first.";
-});
 </script>
 
 </body>
