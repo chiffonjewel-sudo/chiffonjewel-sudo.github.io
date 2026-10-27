@@ -587,96 +587,6 @@ h1 {
   box-shadow: 0 4px 15px #00308733;
 }
 
-/* --- NEW QR CODE POPUP (MODAL) STYLES --- */
-
-.modal-overlay {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(5px);
-  z-index: 100; /* On top of everything */
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.modal-overlay.active {
-  display: flex;
-}
-
-.modal-content {
-  background: #100914;
-  border: 1px solid var(--pink);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 10px 50px rgba(255, 57, 135, 0.2);
-  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes popIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #a89cae;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.modal-close:hover {
-  color: var(--pink);
-  transform: scale(1.1);
-}
-
-.modal-content h3 {
-  font-size: 22px;
-  color: var(--pink2);
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.qr-image {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  margin-bottom: 20px;
-  background: #fff;
-  padding: 10px;
-}
-
-.modal-link {
-  font-size: 13px;
-  color: #0079C1;
-  text-decoration: underline;
-  transition: 0.2s;
-}
-
-.modal-link:hover {
-  color: #4da6ff;
-}
-
 /* FOOTER */
 
 footer {
@@ -953,22 +863,78 @@ footer {
             ◎ Solana (SOL)
           </button>
           
-          <!-- PayPal Button (Opens the Popup) -->
-          <button class="donate-btn btn-paypal" onclick="openPayPalModal()">
+          <!-- PayPal Link (Update this link to your actual PayPal) -->
+          <a href="https://paypal.me/YOUR_PAYPAL_LINK" class="donate-btn btn-paypal" target="_blank">
             💳 PayPal
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEW PAYPAL QR MODAL POPUP -->
-<div class="modal-overlay" id="paypal-modal" onclick="closePayPalModal(event)">
-  <div class="modal-content" onclick="event.stopPropagation()"> <!-- Prevents clicking inside the box from closing it -->
-    <button class="modal-close" onclick="closePayPalModal(event)">✕</button>
-    <h3>Scan to Donate</h3>
-    <p>Scan this QR code with your phone's camera or PayPal app.</p>
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div>
+        <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
+        <p style="margin-top:15px">🍒 Made for Minecraft server owners.</p>
+      </div>
+
+      <div>
+        <div class="footer-links">
+          <a onclick="showView('home')">Home</a>
+          <a onclick="showView('plugins')">Plugins</a>
+          <a onclick="showView('about')">About</a>
+          <a onclick="showView('support')">Support</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Cherry Plugins. All rights reserved. Made with ♥
+    </div>
+  </div>
+</footer>
+
+<script>
+function showView(viewName) {
+  // Hide all views
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('plugins-view').classList.remove('active');
+  document.getElementById('about-view').classList.remove('active');
+  document.getElementById('support-view').classList.remove('active');
+  
+  // Show the selected view
+  if (viewName === 'home') {
+    document.getElementById('home-view').style.display = 'block';
+  } else if (viewName === 'plugins') {
+    document.getElementById('plugins-view').classList.add('active');
+  } else if (viewName === 'about') {
+    document.getElementById('about-view').classList.add('active');
+  } else if (viewName === 'support') {
+    document.getElementById('support-view').classList.add('active');
+  }
+
+  // Scroll to the top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Universal copy function for all buttons
+function copyText(textToCopy, buttonId, originalHTML) {
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    const btn = document.getElementById(buttonId);
+    btn.innerHTML = "✔ Copied!";
     
-    <!-- Embedded QR Code directly into the code -->
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAgAElEQVR4nO3dd5hU1f0/8Pf3c8+9Z2b3zi4sS+8gKqJiQRRRERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
+    // Change back to normal after 2 seconds
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  }).catch(err => {
+    alert("Failed to copy! Please copy it manually.");
+  });
+}
+</script>
+
+</body>
+</html>
