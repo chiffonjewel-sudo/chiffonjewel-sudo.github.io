@@ -241,15 +241,11 @@ h1 {
   width: 128px;
   height: 128px;
   margin-bottom: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Pixelated rendering to keep the block sharp when it scales up */
+  position: relative; /* Ensures the absolute block stays inside */
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
   transition: transform 0.2s ease;
 }
 
@@ -261,6 +257,12 @@ h1 {
   width: 8px; /* Base pixel size */
   height: 8px;
   background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px; /* Perfectly center the drawing */
+  margin-left: -4px;
+  
   /* 16x16 grid of box shadows to recreate the grass block texture */
   box-shadow:
     /* Row 1: Grass */
