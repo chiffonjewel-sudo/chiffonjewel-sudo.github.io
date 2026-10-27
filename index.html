@@ -759,10 +759,10 @@ footer {
       </p>
       
       <div class="support-actions">
-        <!-- This creates a mailto link that opens their email app -->
-        <a href="mailto:chiffon.work.support@gmail.com" class="button" style="font-size: 15px; padding: 15px 30px;">
+        <!-- Changed to a button with an onclick event to copy text -->
+        <button class="button" id="copy-email-btn" onclick="copyEmail()" style="font-size: 15px; padding: 15px 30px; border: 1px solid var(--pink);">
           ✉ chiffon.work.support@gmail.com
-        </a>
+        </button>
       </div>
       
       <div style="margin-top: 30px;">
@@ -817,6 +817,26 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Function to copy email to clipboard
+function copyEmail() {
+  const email = "chiffon.work.support@gmail.com";
+  const btn = document.getElementById("copy-email-btn");
+  
+  // Copy text
+  navigator.clipboard.writeText(email).then(() => {
+    // Change button text temporarily to show it worked
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "✔ Copied to Clipboard!";
+    
+    // Change back to normal after 2 seconds
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+    }, 2000);
+  }).catch(err => {
+    alert("Failed to copy email. Please copy it manually: " + email);
+  });
 }
 </script>
 
