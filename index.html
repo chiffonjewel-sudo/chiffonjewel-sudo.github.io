@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -348,6 +347,57 @@ h1 {
 .benefit h3 { font-size: 12px; }
 .benefit p { color: var(--muted); font-size: 10px; }
 
+/* ABOUT SECTION (HIDDEN BY DEFAULT) */
+
+.about-section {
+  display: none;
+  padding: 120px 0 60px;
+  min-height: 70vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #39102c30, transparent 65%),
+    #0b0710;
+}
+
+.about-section.active {
+  display: block;
+}
+
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content .section-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.about-content h2 {
+  font-size: clamp(30px, 5vw, 42px);
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #d4c9dc;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.about-content p strong {
+  color: var(--pink2);
+}
+
+.about-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 /* FOOTER */
 
 footer {
@@ -446,16 +496,17 @@ footer {
 <body>
 
 <nav class="navbar">
-  <a href="#home" class="logo">🍒 <span>Cherry</span> Plugins</a>
+  <a href="#home" class="logo" onclick="showHome()">🍒 <span>Cherry</span> Plugins</a>
   <div class="navlinks">
-    <a href="#home">⌂ Home</a>
-    <a href="#plugins">◇ Plugins</a>
-    <a href="#about">♙ About</a>
-    <a href="#contact">✉ Contact</a>
+    <a href="#home" onclick="showHome()">⌂ Home</a>
+    <a href="#plugins" onclick="showHome()">◇ Plugins</a>
+    <a href="#about" onclick="showAbout()">♙ About</a>
   </div>
-  <a href="#plugins" class="button">🍒 Download Now</a>
+  <a href="#plugins" class="button" onclick="showHome()">🍒 Download Now</a>
 </nav>
 
+<!-- HOME / MAIN CONTENT -->
+<div id="home-view">
 <header class="hero" id="home">
   <div class="container">
     <div class="hero-content">
@@ -487,7 +538,7 @@ footer {
 
       <div class="hero-actions">
         <a href="#plugins" class="button">↓ &nbsp; Browse Plugins →</a>
-        <a href="#about" class="button button-outline">ⓘ &nbsp; Learn More</a>
+        <a href="#about" class="button button-outline" onclick="showAbout()">ⓘ &nbsp; Learn More</a>
       </div>
     </div>
   </div>
@@ -602,7 +653,7 @@ footer {
 
     </div>
 
-    <section class="benefits" id="about">
+    <section class="benefits">
       <div class="benefit">
         <div class="benefit-icon">⟳</div>
         <h3>Regular Updates</h3>
@@ -627,21 +678,45 @@ footer {
   </div>
 </section>
 </main>
+</div>
 
-<footer id="contact">
+<!-- ABOUT SECTION (HIDDEN BY DEFAULT) -->
+<section class="about-section" id="about-view">
+  <div class="container">
+    <div class="about-content">
+      <div class="section-label">🍒 &nbsp; ABOUT CHERRY PLUGINS</div>
+      <h2>Why I <span class="gradient">Built This</span></h2>
+      <p>
+        I created this website as a place to <strong>upload and share my Minecraft plugins</strong> 
+        with the community. I'm a Minecraft enthusiast who loves building tools that make 
+        servers more fun, reliable, and easier to manage.
+      </p>
+      <p>
+        Right now, this site is focused on my custom plugins — but in the future, 
+        I may expand it with <strong>more plugins, resources, and maybe even other game mods</strong>. 
+        This is a growing project made with love for server owners and players alike.
+      </p>
+      <div class="about-actions">
+        <a href="#plugins" class="button" onclick="showHome()">🍒 Browse Plugins</a>
+        <a href="#home" class="button button-outline" onclick="showHome()">⌂ Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
   <div class="container">
     <div class="footer-main">
       <div>
-        <a class="logo" href="#home">🍒 <span>Cherry</span> Plugins</a>
+        <a class="logo" href="#home" onclick="showHome()">🍒 <span>Cherry</span> Plugins</a>
         <p>Small plugins. Big ideas.</p>
       </div>
 
       <div>
         <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#plugins">Plugins</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" onclick="showHome()">Home</a>
+          <a href="#plugins" onclick="showHome()">Plugins</a>
+          <a href="#about" onclick="showAbout()">About</a>
         </div>
         <p style="margin-top:15px">🍒 Made for Minecraft server owners.</p>
       </div>
@@ -664,6 +739,18 @@ footer {
 </footer>
 
 <script>
+function showAbout() {
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('about-view').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showHome() {
+  document.getElementById('about-view').classList.remove('active');
+  document.getElementById('home-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 document.getElementById("subscribe-form").addEventListener("submit", function(event) {
   event.preventDefault();
   document.getElementById("subscribe-message").textContent =
