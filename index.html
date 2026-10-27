@@ -235,13 +235,12 @@ h1 {
   box-shadow: 0 10px 35px #ff398712;
 }
 
-/* NEW CATEGORY IMAGE STYLE */
 .category-icon-img {
   width: 80px;
   height: 80px;
   object-fit: contain;
   margin-bottom: 15px;
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5)); /* Gives it a nice 3D shadow */
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5));
   transition: transform 0.2s ease;
 }
 
@@ -285,11 +284,11 @@ h1 {
   padding: 120px 0 50px;
   min-height: 80vh;
   
-  /* PLUGINS BACKGROUND */
+  /* UPDATED: Beautiful purple Minecraft End background */
   background-color: #0b0710;
   background-image: 
     linear-gradient(rgba(11, 7, 16, 0.85), rgba(11, 7, 16, 0.95)), 
-    url("https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=2000&auto=format&fit=crop");
+    url("https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=2000&auto=format&fit=crop");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -343,14 +342,14 @@ h1 {
 /* SINGLE PLUGIN LAYOUT */
 .plugin-grid {
   display: flex;
-  justify-content: center; /* Centers the single card */
+  justify-content: center;
   gap: 15px;
   width: 100%;
 }
 
 .plugin-card {
   width: 100%;
-  max-width: 320px; /* Keeps the card at a good size */
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   padding: 19px;
@@ -384,15 +383,14 @@ h1 {
   border-radius: 13px;
   background: #ff39870e;
   font-size: 36px;
-  overflow: hidden; /* Keeps the image neatly inside the border */
+  overflow: hidden;
 }
 
-/* IMAGE STYLE FOR THE PLUGIN ICON */
 .plugin-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 6px; /* Gives the image a little breathing room */
+  padding: 6px;
 }
 
 .plugin-card h3 { font-size: 16px; }
@@ -452,7 +450,7 @@ h1 {
   padding: 20px 8px;
   border: 1px solid #35213a;
   border-radius: 13px;
-  background: rgba(16, 10, 20, 0.8); /* Slightly transparent to blend with BG */
+  background: rgba(16, 10, 20, 0.8);
   backdrop-filter: blur(8px);
 }
 
@@ -644,7 +642,6 @@ footer {
         <div class="category-grid">
           <!-- Minecraft Plugins Category -->
           <div class="category-card" onclick="showView('plugins')">
-            <!-- New image loaded directly from CommunityOne -->
             <img src="https://cdn.discordapp.com/emojis/1476912533943357645.png" alt="Minecraft Grass Block" class="category-icon-img">
             <h3>Minecraft Plugins</h3>
             <p>Browse my custom-coded plugins for your Minecraft server.</p>
@@ -680,7 +677,6 @@ footer {
       <!-- EnderChest Plugin Card -->
       <article class="plugin-card">
         <div class="plugin-top">
-          <!-- Image loaded directly from CommunityOne -->
           <div class="plugin-icon">
             <img src="https://cdn.discordapp.com/emojis/1491468703496409088.png" alt="EnderChest Plugin">
           </div>
