@@ -284,14 +284,10 @@ h1 {
   padding: 120px 0 50px;
   min-height: 80vh;
   
-  /* UPDATED: Beautiful purple Minecraft End background */
-  background-color: #0b0710;
-  background-image: 
-    linear-gradient(rgba(11, 7, 16, 0.85), rgba(11, 7, 16, 0.95)), 
-    url("https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=2000&auto=format&fit=crop");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  /* CLEAN CSS BACKGROUND TO MATCH MAIN MENU */
+  background: 
+    radial-gradient(ellipse at 50% 0%, #39102c30, transparent 65%),
+    #0b0710;
 }
 
 .plugins-section.active {
@@ -308,10 +304,6 @@ h1 {
   margin-bottom: 20px;
   cursor: pointer;
   transition: .2s;
-  background: rgba(11, 7, 16, 0.6);
-  padding: 6px 12px;
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
 }
 
 .back-btn:hover {
@@ -357,13 +349,13 @@ h1 {
   border-radius: 14px;
   background: linear-gradient(145deg, #160d19, #100a13);
   transition: .25s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .plugin-card:hover {
   transform: translateY(-5px);
   border-color: var(--pink);
-  box-shadow: 0 10px 35px #ff398712, 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 35px #ff398712;
 }
 
 .plugin-top {
@@ -450,8 +442,7 @@ h1 {
   padding: 20px 8px;
   border: 1px solid #35213a;
   border-radius: 13px;
-  background: rgba(16, 10, 20, 0.8);
-  backdrop-filter: blur(8px);
+  background: #100a14;
 }
 
 .benefit {
