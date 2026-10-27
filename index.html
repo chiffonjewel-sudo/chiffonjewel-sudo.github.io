@@ -119,7 +119,7 @@ a { color: inherit; text-decoration: none; }
   background-size: cover;
 }
 
-/* NEW: Flex container to split Hero text and News box */
+/* Flex container to split Hero text and News box */
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -134,7 +134,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 670px;
 }
 
-/* NEW: News Box Styles */
+/* News Box Styles */
 .news-box {
   width: 340px;
   background: rgba(19, 12, 23, 0.75);
@@ -416,6 +416,7 @@ h1 {
 /* SINGLE PLUGIN LAYOUT */
 .plugin-grid {
   display: flex;
+  flex-wrap: wrap; /* Allows multiple cards to wrap or sit side by side */
   justify-content: center;
   gap: 15px;
   width: 100%;
@@ -827,7 +828,7 @@ footer {
             <p>Website launched! EnderChest v1.2.0 is now available for download. Go check it out!</p>
           </li>
           
-          <!-- UPDATE POST 2: (Example of another update) -->
+          <!-- UPDATE POST 2 -->
           <li class="news-item">
             <span class="news-date">Coming Soon</span>
             <p>Working on a new custom plugin to help manage server performance. Stay tuned!</p>
@@ -914,6 +915,32 @@ footer {
           <span>◷ 1.21+</span>
         </div>
         <a class="button download" href="downloads/cherry-enderchest-1.2.0.jar" download>↓ &nbsp; Download</a>
+      </article>
+
+      <!-- NEW: StaffCore Plugin Card -->
+      <article class="plugin-card">
+        <div class="plugin-top">
+          <div class="plugin-icon">
+            🛡️
+          </div>
+          <div>
+            <h3>StaffCore</h3>
+            <p class="plugin-tagline">Ultimate staff management.</p>
+          </div>
+        </div>
+        <p class="plugin-description">
+          A complete suite for server admins. Features essential staff commands like ban, mute, and vcmute, plus built-in tools to catch cheaters and keep your server safe.
+        </p>
+        <div class="tags">
+          <span class="tag">Admin</span>
+          <span class="tag">Anti-Cheat</span>
+          <span class="tag">Moderation</span>
+        </div>
+        <div class="plugin-meta">
+          <span>▣ v1.0.0</span>
+          <span>◷ 1.21+</span>
+        </div>
+        <a class="button download" href="downloads/cherry-staffcore-1.0.0.jar" download>↓ &nbsp; Download</a>
       </article>
 
     </div>
@@ -1079,18 +1106,6 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// NEW FUNCTION: Scrolls to the download section on the home page
-function scrollToDownload() {
-  // First make sure we are on the home view
-  showView('home');
-  
-  // Then scroll down to the directory section
-  const downloadSection = document.getElementById('download-section');
-  if (downloadSection) {
-    downloadSection.scrollIntoView({ behavior: 'smooth' });
-  }
 }
 
 // Universal copy function for all buttons
