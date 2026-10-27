@@ -235,10 +235,18 @@ h1 {
   box-shadow: 0 10px 35px #ff398712;
 }
 
-.category-icon-emoji {
-  font-size: 60px;
+/* NEW CATEGORY IMAGE STYLE */
+.category-icon-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   margin-bottom: 15px;
-  line-height: 1;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5)); /* Gives it a nice 3D shadow */
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover .category-icon-img {
+  transform: translateY(-4px) scale(1.05);
 }
 
 .category-card h3 {
@@ -262,6 +270,12 @@ h1 {
   transform: none;
   border-color: #3d273f;
   box-shadow: none;
+}
+
+.category-icon-emoji {
+  font-size: 60px;
+  margin-bottom: 15px;
+  line-height: 1;
 }
 
 /* PLUGINS SECTION (HIDDEN BY DEFAULT) */
@@ -630,7 +644,8 @@ footer {
         <div class="category-grid">
           <!-- Minecraft Plugins Category -->
           <div class="category-card" onclick="showView('plugins')">
-            <div class="category-icon-emoji">⛏️</div>
+            <!-- New image loaded directly from CommunityOne -->
+            <img src="https://cdn.discordapp.com/emojis/1476912533943357645.png" alt="Minecraft Grass Block" class="category-icon-img">
             <h3>Minecraft Plugins</h3>
             <p>Browse my custom-coded plugins for your Minecraft server.</p>
           </div>
