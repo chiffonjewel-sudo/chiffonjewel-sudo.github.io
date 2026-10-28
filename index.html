@@ -22,7 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
-  overflow-x: hidden; /* Prevents side scrolling */
+  overflow-x: hidden; 
 }
 
 body {
@@ -72,7 +72,7 @@ a { color: inherit; text-decoration: none; }
   color: #e7dce9;
 }
 
-.navlinks a { cursor: pointer; transition: 0.2s; }
+.navlinks a { cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 5px; }
 .navlinks a:hover { color: var(--pink2); }
 
 .button {
@@ -753,7 +753,7 @@ footer {
 }
 
 /* =========================================
-   MOBILE OPTIMIZATIONS (FIXING THE NAVBAR)
+   MOBILE OPTIMIZATIONS 
    ========================================= */
 
 @media (max-width: 1000px) {
@@ -769,7 +769,7 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  /* Change navbar from absolute floating to fixed top bar */
+  /* Mobile Navbar Bar */
   .navbar {
     position: fixed; 
     top: 0; 
@@ -781,29 +781,32 @@ footer {
     border-left: none;
     border-right: none;
     border-top: none;
+    flex-wrap: wrap; /* Allows wrapping if needed */
   }
 
-  /* Adjust hero padding so text doesn't hide behind the new fixed navbar */
+  /* Adjust hero padding so text doesn't hide behind fixed navbar */
   .hero { 
-    padding-top: 120px; 
+    padding-top: 140px; 
     min-height: 600px; 
   }
 
-  /* Hide the big red download button in navbar on mobile */
-  .navbar > .button { 
-    display: none; 
-  }
-
-  /* Hide the text labels in nav links, keep only the icons to save space */
+  /* Shrink nav text slightly so it fits with the button */
   .navlinks {
     gap: 15px;
-    font-size: 0; /* Hides the text */
+    font-size: 12px;
   }
   
-  .navlinks a { font-size: 18px; } /* Makes the icons bigger */
+  /* Make logo smaller */
+  .logo { 
+    font-size: 18px; 
+  }
 
-  /* Make logo slightly smaller */
-  .logo { font-size: 18px; }
+  /* Make Download button smaller but keep it visible */
+  .navbar > .button {
+    padding: 8px 12px;
+    font-size: 11px;
+    margin-left: auto; /* Pushes it to the right edge */
+  }
   
   /* Make sure plugin grid is stacked */
   .category-grid { grid-template-columns: 1fr; }
@@ -825,8 +828,33 @@ footer {
 
   /* Adjust plugins page padding since navbar is fixed */
   .plugins-section, .about-section, .support-section {
-    padding-top: 100px;
+    padding-top: 120px;
   }
+}
+
+/* Extra small phones: hide text completely and just keep icons */
+@media (max-width: 550px) {
+  .navlinks {
+    gap: 12px;
+    font-size: 16px; /* Only affects the icons now */
+  }
+  
+  .navlinks .nav-text {
+    display: none; /* Hides the word "Home", "Plugins", etc. */
+  }
+
+  .navbar > .button {
+    display: none; /* Hide the navbar button on tiny screens to save space */
+  }
+  
+  /* Add a floating download button instead */
+  .navbar {
+    justify-content: space-between;
+  }
+  
+  /* Adjust hero padding since navbar might be smaller now */
+  .hero { padding-top: 110px; }
+  .plugins-section, .about-section, .support-section { padding-top: 90px; }
 }
 </style>
 </head>
@@ -836,11 +864,12 @@ footer {
 <nav class="navbar">
   <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
   <div class="navlinks">
-    <a onclick="showView('home')" title="Home">⌂</a>
-    <a onclick="showView('plugins')" title="Plugins">◇</a>
-    <a onclick="showView('about')" title="About">♙</a>
-    <a onclick="showView('support')" title="Support">✉</a>
+    <a onclick="showView('home')" title="Home">⌂ <span class="nav-text">Home</span></a>
+    <a onclick="showView('plugins')" title="Plugins">◇ <span class="nav-text">Plugins</span></a>
+    <a onclick="showView('about')" title="About">♙ <span class="nav-text">About</span></a>
+    <a onclick="showView('support')" title="Support">✉ <span class="nav-text">Support</span></a>
   </div>
+  <a onclick="scrollToDownload()" class="button" style="cursor: pointer;">🍒 Download</a>
 </nav>
 
 <!-- HOME VIEW -->
@@ -1170,6 +1199,15 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Scrolls to the download section on the home page
+function scrollToDownload() {
+  showView('home');
+  const downloadSection = document.getElementById('download-section');
+  if (downloadSection) {
+    downloadSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 // Universal copy function for all buttons
