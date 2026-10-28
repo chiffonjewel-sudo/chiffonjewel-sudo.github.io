@@ -768,7 +768,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Change navbar from absolute floating to fixed top bar */
   .navbar {
     position: fixed; 
@@ -789,6 +789,11 @@ footer {
     min-height: 600px; 
   }
 
+  /* Hide the big red download button in navbar on mobile */
+  .navbar > .button { 
+    display: none; 
+  }
+
   /* Hide the text labels in nav links, keep only the icons to save space */
   .navlinks {
     gap: 15px;
@@ -800,12 +805,6 @@ footer {
   /* Make logo slightly smaller */
   .logo { font-size: 18px; }
   
-  /* Shrink the Download button so it fits */
-  .navbar > .button {
-    padding: 10px 15px;
-    font-size: 12px;
-  }
-
   /* Make sure plugin grid is stacked */
   .category-grid { grid-template-columns: 1fr; }
   .plugin-card { padding: 22px; max-width: 100%; }
@@ -829,11 +828,6 @@ footer {
     padding-top: 100px;
   }
 }
-
-@media (max-width: 450px) {
-  /* If screen is SUPER small (like an older phone), hide the Download button in nav */
-  .navbar > .button { display: none; }
-}
 </style>
 </head>
 
@@ -842,12 +836,11 @@ footer {
 <nav class="navbar">
   <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
   <div class="navlinks">
-    <a onclick="showView('home')" title="Home">⌂ <span class="nav-text">Home</span></a>
-    <a onclick="showView('plugins')" title="Plugins">◇ <span class="nav-text">Plugins</span></a>
-    <a onclick="showView('about')" title="About">♙ <span class="nav-text">About</span></a>
-    <a onclick="showView('support')" title="Support">✉ <span class="nav-text">Support</span></a>
+    <a onclick="showView('home')" title="Home">⌂</a>
+    <a onclick="showView('plugins')" title="Plugins">◇</a>
+    <a onclick="showView('about')" title="About">♙</a>
+    <a onclick="showView('support')" title="Support">✉</a>
   </div>
-  <a onclick="scrollToDownload()" class="button" style="cursor: pointer;">🍒 Download Now</a>
 </nav>
 
 <!-- HOME VIEW -->
@@ -1177,15 +1170,6 @@ function showView(viewName) {
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Scrolls to the download section on the home page
-function scrollToDownload() {
-  showView('home');
-  const downloadSection = document.getElementById('download-section');
-  if (downloadSection) {
-    downloadSection.scrollIntoView({ behavior: 'smooth' });
-  }
 }
 
 // Universal copy function for all buttons
