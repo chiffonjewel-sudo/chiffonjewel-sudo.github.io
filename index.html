@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>🍒 Cherry Plugins</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +20,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden; /* Prevents side scrolling */
+}
 
 body {
   background: var(--bg);
   color: #fff;
   font-family: Inter, sans-serif;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -68,7 +72,7 @@ a { color: inherit; text-decoration: none; }
   color: #e7dce9;
 }
 
-.navlinks a { cursor: pointer; }
+.navlinks a { cursor: pointer; transition: 0.2s; }
 .navlinks a:hover { color: var(--pink2); }
 
 .button {
@@ -87,6 +91,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   box-shadow: 0 0 25px #ff27852b;
   transition: .2s;
+  white-space: nowrap;
 }
 
 .button:hover {
@@ -416,7 +421,7 @@ h1 {
 /* SINGLE PLUGIN LAYOUT */
 .plugin-grid {
   display: flex;
-  flex-wrap: wrap; /* Allows multiple cards to wrap or sit side by side */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   width: 100%;
@@ -747,7 +752,9 @@ footer {
   font-size: 10px;
 }
 
-/* RESPONSIVE */
+/* =========================================
+   MOBILE OPTIMIZATIONS (FIXING THE NAVBAR)
+   ========================================= */
 
 @media (max-width: 1000px) {
   .hero-container {
@@ -761,24 +768,71 @@ footer {
   }
 }
 
-@media (max-width: 650px) {
-  .navbar { padding: 12px; }
-  .logo { font-size: 17px; }
-  .navlinks { gap: 12px; font-size: 11px; }
-  .navlinks a:last-child { display: none; }
-  .navbar > .button { display: none; }
-  .hero { padding-top: 140px; min-height: 600px; }
-  .hero-description { font-size: 13px; }
-  .features { gap: 16px; }
+@media (max-width: 768px) {
+  /* Change navbar from absolute floating to fixed top bar */
+  .navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    border-radius: 0;
+    transform: none;
+    padding: 10px 15px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  /* Adjust hero padding so text doesn't hide behind the new fixed navbar */
+  .hero { 
+    padding-top: 120px; 
+    min-height: 600px; 
+  }
+
+  /* Hide the text labels in nav links, keep only the icons to save space */
+  .navlinks {
+    gap: 15px;
+    font-size: 0; /* Hides the text */
+  }
+  
+  .navlinks a { font-size: 18px; } /* Makes the icons bigger */
+
+  /* Make logo slightly smaller */
+  .logo { font-size: 18px; }
+  
+  /* Shrink the Download button so it fits */
+  .navbar > .button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  /* Make sure plugin grid is stacked */
   .category-grid { grid-template-columns: 1fr; }
   .plugin-card { padding: 22px; max-width: 100%; }
+
+  /* Make benefits stack 2x2 */
   .benefits { grid-template-columns: repeat(2, 1fr); }
   .benefit:nth-child(2) { border-right: none; }
   .benefit:nth-child(-n+2) { border-bottom: 1px solid #34213a; padding-bottom: 14px; }
   .benefit:nth-child(n+3) { padding-top: 14px; }
-  .footer-main { grid-template-columns: 1fr; gap: 22px; }
+
+  /* Adjust footer for mobile */
+  .footer-main { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+  .footer-links { justify-content: center; }
+
+  /* Donation buttons full width */
   .donation-buttons { flex-direction: column; }
   .donate-btn { width: 100%; }
+
+  /* Adjust plugins page padding since navbar is fixed */
+  .plugins-section, .about-section, .support-section {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  /* If screen is SUPER small (like an older phone), hide the Download button in nav */
+  .navbar > .button { display: none; }
 }
 </style>
 </head>
@@ -788,10 +842,10 @@ footer {
 <nav class="navbar">
   <a class="logo" onclick="showView('home')">🍒 <span>Cherry</span> Plugins</a>
   <div class="navlinks">
-    <a onclick="showView('home')">⌂ Home</a>
-    <a onclick="showView('plugins')">◇ Plugins</a>
-    <a onclick="showView('about')">♙ About</a>
-    <a onclick="showView('support')">✉ Support</a>
+    <a onclick="showView('home')" title="Home">⌂ <span class="nav-text">Home</span></a>
+    <a onclick="showView('plugins')" title="Plugins">◇ <span class="nav-text">Plugins</span></a>
+    <a onclick="showView('about')" title="About">♙ <span class="nav-text">About</span></a>
+    <a onclick="showView('support')" title="Support">✉ <span class="nav-text">Support</span></a>
   </div>
   <a onclick="scrollToDownload()" class="button" style="cursor: pointer;">🍒 Download Now</a>
 </nav>
@@ -1125,12 +1179,9 @@ function showView(viewName) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// RE-ADDED: Scrolls to the download section on the home page
+// Scrolls to the download section on the home page
 function scrollToDownload() {
-  // First make sure we are on the home view
   showView('home');
-  
-  // Then scroll down to the directory section
   const downloadSection = document.getElementById('download-section');
   if (downloadSection) {
     downloadSection.scrollIntoView({ behavior: 'smooth' });
